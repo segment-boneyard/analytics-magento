@@ -1,0 +1,69 @@
+<?php
+/**
+ * Atwix
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+
+ * @category    Atwix Ext
+ * @package     Atwix_Segmentio
+ * @author      Atwix Core Team
+ * @copyright   Copyright (c) 2014 Atwix (http://www.atwix.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @var $this Atwix_Segmentio_Block_Init
+ */
+?>
+<?php if (Mage::getStoreConfig('atwix_segmentio/general/active')): ?>
+    <script type="text/javascript">
+    //<![CDATA[
+        window.analytics||(window.analytics=[]),window.analytics.methods=[
+            "identify","track","trackLink","trackForm","trackClick","trackSubmit",
+            "page","pageview","ab","alias","ready","group","on","once","off"
+        ],window.analytics.factory=function(t){
+            return function(){
+                var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics
+            }
+        };
+        for(var i=0;i<window.analytics.methods.length;i++){
+            var method=window.analytics.methods[i];
+            window.analytics[method]=window.analytics.factory(method)
+        } window.analytics.load=function(t){
+            var a=document.createElement("script");
+            a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+
+                "d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";
+            var n=document.getElementsByTagName("script")[0];
+            n.parentNode.insertBefore(a,n)
+        }, window.analytics.SNIPPET_VERSION="2.0.8",
+        window.analytics.load("<?php echo Mage::getStoreConfig('atwix_segmentio/general/segmentio_key') ?>");
+        <?php if (Mage::registry('current_category')): ?>
+            window.analytics.page('Category','<?php echo Mage::registry('current_category')->getName()?>');
+        <?php else:?>
+            window.analytics.page();
+        <?php endif; ?>
+    //]]>
+    </script>
+
+    <?php $userData = $this->getUserData(); ?>
+        <?php if ($userData['customerId']) : ?>
+            <script type="text/javascript">
+                //<![CDATA[
+                var segmCustomerId = 'id_' + '<?php echo $userData['customerId']; ?>';
+                analytics.identify(segmCustomerId, {
+                    Email : '<?php echo $userData['customerEmail']; ?>',
+                    Name : '<?php echo $userData['customerFirstname'] . ' ' . $userData['customerLastname']; ?>',
+                    City: '<?php echo $userData['customerAddressCity']; ?>',
+                    Region: '<?php echo $userData['customerAddressRegion']; ?>',
+                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('atwix_segmentio')->getCountry(); ?>'
+                });
+                analytics.track('Registered');
+                //]]>
+            </script>
+        <?php endif; ?>
+<?php endif; ?>
