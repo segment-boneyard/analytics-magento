@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Segment.io
+ *
+ * @category    Segment.io Ext
+ * @package     Segmentio_Segmentio
+ * @author      Segment.io
+ * @copyright   Copyright © 2014 Segment.io
+ */-->
+<config>
+    <modules>
+        <Segmentio_Segmentio>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Segmentio_Segmentio>
+    </modules>
+</config>

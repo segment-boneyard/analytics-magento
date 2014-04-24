@@ -1,0 +1,39 @@
+<?php
+/**
+ * Segment.io
+ *
+ * @category    Segment.io Ext
+ * @package     Segmentio_Segmentio
+ * @author      Segment.io
+ * @copyright   Copyright © 2014 Segment.io
+ * @var $this   Segmentio_Segmentio_Block_Onepage_Success
+ */
+?>
+<?php if(Mage::getStoreConfig('segmentio_segmentio/general/active')):?>
+    <?php
+    $orderIds = $this->getOrderId();
+    $collection = $this->getOrderCollection($orderIds);
+    $orderInformation = $this->getOrderInfo($collection);
+    ?>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        analytics.track('Completed Order', {
+            <?php
+                $subgect =  json_encode($orderInformation['orderInfo']);
+                $orderInfo = preg_replace('(\{)', "", $subgect );
+                $orderInfo = preg_replace('(\})', "", $orderInfo );
+                echo $orderInfo;
+                echo ",\n";
+            ?>
+            products:[
+                <?php foreach ($orderInformation['productItem'] as $productItem) {
+                        echo json_encode($productItem);
+                       echo ",";
+                }
+                ?>
+            ]
+        });
+        //]]>
+    </script>
+<?php endif; ?>

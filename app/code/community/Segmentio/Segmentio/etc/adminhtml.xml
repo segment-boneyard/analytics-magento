@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Segment.io
+ *
+ * @category    Segment.io Ext
+ * @package     Segmentio_Segmentio
+ * @author      Segment.io
+ * @copyright   Copyright © 2014 Segment.io
+ */-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <segmentio_segmentio translate="title">
+                                        <title>Segmentio Extensions</title>
+                                    </segmentio_segmentio>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
