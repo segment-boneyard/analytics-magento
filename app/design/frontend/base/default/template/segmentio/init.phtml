@@ -1,26 +1,15 @@
 <?php
 /**
- * Atwix
+ * Segment.io
  *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Open Software License (OSL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/osl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
-
- * @category    Atwix Ext
- * @package     Atwix_Segmentio
- * @author      Atwix Core Team
- * @copyright   Copyright (c) 2014 Atwix (http://www.atwix.com)
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- * @var $this Atwix_Segmentio_Block_Init
+ * @category    Segment.io Ext
+ * @package     Segmentio_Segmentio
+ * @author      Segment.io
+ * @copyright   Copyright © 2014 Segment.io
+ * @var $this Segmentio_Segmentio_Block_Init
  */
 ?>
-<?php if (Mage::getStoreConfig('atwix_segmentio/general/active')): ?>
+<?php if (Mage::getStoreConfig('segmentio_segmentio/general/active')): ?>
     <script type="text/javascript">
     //<![CDATA[
         window.analytics||(window.analytics=[]),window.analytics.methods=[
@@ -41,7 +30,7 @@
             var n=document.getElementsByTagName("script")[0];
             n.parentNode.insertBefore(a,n)
         }, window.analytics.SNIPPET_VERSION="2.0.8",
-        window.analytics.load("<?php echo Mage::getStoreConfig('atwix_segmentio/general/segmentio_key') ?>");
+        window.analytics.load("<?php echo Mage::getStoreConfig('segmentio_segmentio/general/segmentio_key') ?>");
         <?php if (Mage::registry('current_category')): ?>
             window.analytics.page('Category','<?php echo Mage::registry('current_category')->getName()?>');
         <?php else:?>
@@ -60,7 +49,7 @@
                     Name : '<?php echo $userData['customerFirstname'] . ' ' . $userData['customerLastname']; ?>',
                     City: '<?php echo $userData['customerAddressCity']; ?>',
                     Region: '<?php echo $userData['customerAddressRegion']; ?>',
-                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('atwix_segmentio')->getCountry(); ?>'
+                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('segmentio_segmentio')->getCountry(); ?>'
                 });
                 analytics.track('Registered');
                 //]]>
