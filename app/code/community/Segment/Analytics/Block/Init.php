@@ -3,12 +3,12 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
 
-class Segmentio_Segmentio_Block_Init extends Mage_Core_Block_Template
+class Segment_Analytics_Block_Init extends Mage_Core_Block_Template
 {
     /**
      * Get user data for identity user

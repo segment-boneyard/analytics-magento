@@ -3,12 +3,12 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
 
-class Segmentio_Segmentio_Block_Onepage_Success extends Mage_Checkout_Block_Onepage_Success
+class Segment_Analytics_Block_Onepage_Success extends Mage_Checkout_Block_Onepage_Success
 {
     /**
      * Return order id by order increment id
@@ -66,7 +66,7 @@ class Segmentio_Segmentio_Block_Onepage_Success extends Mage_Checkout_Block_Onep
                     'sku'=>$item->getSku(),
                     'name'=>$item->getName(),
                     'price'=>$item->getPrice(),
-                    'category'=>Mage::helper('segmentio_segmentio')->getCategoryItemProduct($item->getProductId())
+                    'category'=>Mage::helper('segment_analytics')->getCategoryItemProduct($item->getProductId())
 
                 );
             }

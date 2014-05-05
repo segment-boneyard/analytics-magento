@@ -4,7 +4,7 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */-->
@@ -17,9 +17,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <segmentio_segmentio translate="title">
-                                        <title>Segmentio Extensions</title>
-                                    </segmentio_segmentio>
+                                    <segment_analytics translate="title">
+                                        <title>Segment.io Extensions</title>
+                                    </segment_analytics>
                                 </children>
                             </config>
                         </children>

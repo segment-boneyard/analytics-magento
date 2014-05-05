@@ -3,12 +3,12 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
 ?>
-<?php if (Mage::getStoreConfig('segmentio_segmentio/general/active')):?>
+<?php if (Mage::getStoreConfig('segment_analytics/general/active')):?>
     <?php $product = Mage::registry('product'); ?>
 
     <script type="text/javascript">
@@ -18,7 +18,7 @@
             sku: '<?php echo $product->getSku()?>',
             name: '<?php echo $product->getName()?>',
             price: '<?php echo $product->getFinalPrice()?>',
-            category: '<?php echo Mage::helper('segmentio_segmentio')->getCategoryItemProduct($product->getId())?>'
+            category: '<?php echo Mage::helper('segment_analytics')->getCategoryItemProduct($product->getId())?>'
         });
     //]]>
     </script>

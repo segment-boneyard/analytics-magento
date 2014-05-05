@@ -3,12 +3,12 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
 
-class Segmentio_Segmentio_Model_Observer
+class Segment_Analytics_Model_Observer
 {
     /**
      * Add data to session after add product in to cart

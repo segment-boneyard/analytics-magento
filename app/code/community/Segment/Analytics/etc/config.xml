@@ -4,58 +4,58 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */-->
 <config>
     <modules>
-        <Segmentio_Segmentio>
+        <Segment_Analytics>
             <version>0.1.0</version>
-        </Segmentio_Segmentio>
+        </Segment_Analytics>
     </modules>
     <global>
         <blocks>
-            <segmentio_segmentio>
-                <class>Segmentio_Segmentio_Block</class>
-            </segmentio_segmentio>
+            <segment_analytics>
+                <class>Segment_Analytics_Block</class>
+            </segment_analytics>
         </blocks>
         <helpers>
-            <segmentio_segmentio>
-                <class>Segmentio_Segmentio_Helper</class>
-            </segmentio_segmentio>
+            <segment_analytics>
+                <class>Segment_Analytics_Helper</class>
+            </segment_analytics>
         </helpers>
         <events>
             <checkout_cart_product_add_after>
                 <observers>
-                    <segmentio_segmentio>
-                        <class>Segmentio_Segmentio_Model_Observer</class>
+                    <segment_analytics>
+                        <class>Segment_Analytics_Model_Observer</class>
                         <method>addToCartAfter</method>
-                    </segmentio_segmentio>
+                    </segment_analytics>
                 </observers>
             </checkout_cart_product_add_after>
             <sales_quote_remove_item>
                 <observers>
-                    <segmentio_segmentio>
-                        <class>Segmentio_Segmentio_Model_Observer</class>
+                    <segment_analytics>
+                        <class>Segment_Analytics_Model_Observer</class>
                         <method>deleteFromCartAfter</method>
-                    </segmentio_segmentio>
+                    </segment_analytics>
                 </observers>
             </sales_quote_remove_item>
             <wishlist_add_product>
                 <observers>
-                    <segmentio_segmentio>
-                        <class>Segmentio_Segmentio_Model_Observer</class>
+                    <segment_analytics>
+                        <class>Segment_Analytics_Model_Observer</class>
                         <method>wishlistFromCartAfter</method>
-                    </segmentio_segmentio>
+                    </segment_analytics>
                 </observers>
             </wishlist_add_product>
             <review_save_after>
                 <observers>
-                    <segmentio_segmentio>
-                        <class>Segmentio_Segmentio_Model_Observer</class>
+                    <segment_analytics>
+                        <class>Segment_Analytics_Model_Observer</class>
                         <method>reviewProductAfter</method>
-                    </segmentio_segmentio>
+                    </segment_analytics>
                 </observers>
             </review_save_after>
         </events>
@@ -63,18 +63,18 @@
     <frontend>
         <layout>
             <updates>
-                <segmentio_segmentio module="Segmentio_Segmentio">
-                    <file>segmentio/segmentio.xml</file>
-                </segmentio_segmentio>
+                <segment_analytics module="Segment_Analytics">
+                    <file>segment/segment.xml</file>
+                </segment_analytics>
             </updates>
         </layout>
     </frontend>
     <default>
-        <segmentio_segmentio>
+        <segment_analytics>
             <general>
                 <active>1</active>
-                <segmentio_key />
+                <segment_key />
             </general>
-        </segmentio_segmentio>
+        </segment_analytics>
     </default>
 </config>
