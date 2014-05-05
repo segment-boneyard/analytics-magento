@@ -3,14 +3,14 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
 
-class Segmentio_Segmentio_Helper_Data extends Mage_Core_Helper_Abstract
+class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const CONFIG_PATH_SEGMENTIO_ENABLED = 'segmentio_segmentio/general/enabled';
+    const CONFIG_PATH_SEGMENTIO_ENABLED = 'segment_analytics/general/enabled';
 
     /**
      * Wrapper for getting configuration value

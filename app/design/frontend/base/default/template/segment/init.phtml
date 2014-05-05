@@ -3,13 +3,13 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
- * @var $this Segmentio_Segmentio_Block_Init
+ * @var $this Segment_Analytics_Block_Init
  */
 ?>
-<?php if (Mage::getStoreConfig('segmentio_segmentio/general/active')): ?>
+<?php if (Mage::getStoreConfig('segment_analytics/general/active')): ?>
     <script type="text/javascript">
     //<![CDATA[
         window.analytics||(window.analytics=[]),window.analytics.methods=[
@@ -30,7 +30,7 @@
             var n=document.getElementsByTagName("script")[0];
             n.parentNode.insertBefore(a,n)
         }, window.analytics.SNIPPET_VERSION="2.0.8",
-        window.analytics.load("<?php echo Mage::getStoreConfig('segmentio_segmentio/general/segmentio_key') ?>");
+        window.analytics.load("<?php echo Mage::getStoreConfig('segment_analytics/general/segment_key') ?>");
         <?php if (Mage::registry('current_category')): ?>
             window.analytics.page('Category','<?php echo Mage::registry('current_category')->getName()?>');
         <?php else:?>
@@ -49,7 +49,7 @@
                     Name : '<?php echo $userData['customerFirstname'] . ' ' . $userData['customerLastname']; ?>',
                     City: '<?php echo $userData['customerAddressCity']; ?>',
                     Region: '<?php echo $userData['customerAddressRegion']; ?>',
-                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('segmentio_segmentio')->getCountry(); ?>'
+                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('segment_analytics')->getCountry(); ?>'
                 });
                 analytics.track('Registered');
                 //]]>

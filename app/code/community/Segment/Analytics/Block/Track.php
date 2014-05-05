@@ -3,11 +3,11 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */
-class Segmentio_Segmentio_Block_Track extends Mage_Core_Block_Template
+class Segment_Analytics_Block_Track extends Mage_Core_Block_Template
 {
     /**
      * Get session data for events track

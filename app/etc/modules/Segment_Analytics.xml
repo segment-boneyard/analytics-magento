@@ -4,15 +4,15 @@
  * Segment.io
  *
  * @category    Segment.io Ext
- * @package     Segmentio_Segmentio
+ * @package     Segment_Analytics
  * @author      Segment.io
  * @copyright   Copyright © 2014 Segment.io
  */-->
 <config>
     <modules>
-        <Segmentio_Segmentio>
+        <Segment_Analytics>
             <active>true</active>
             <codePool>community</codePool>
-        </Segmentio_Segmentio>
+        </Segment_Analytics>
     </modules>
 </config>
