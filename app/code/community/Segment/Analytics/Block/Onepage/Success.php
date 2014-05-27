@@ -13,12 +13,12 @@ class Segment_Analytics_Block_Onepage_Success extends Mage_Checkout_Block_Onepag
     /**
      * Return order id by order increment id
      *
-     * @param $orderIncriment
-     * @return mixed
+     * @param $incrementId
+     * @return int
      */
-    public function getOrderIds($orderIncriment)
+    public function getOrderIds($incrementId)
     {
-        $orderId = Mage::getModel('sales/order')->loadByIncrementId($orderIncriment)->getEntityId();
+        $orderId = Mage::getModel('sales/order')->loadByIncrementId($incrementId)->getEntityId();
         return $orderId;
     }
 

@@ -13,7 +13,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
     const CONFIG_PATH_SEGMENTIO_ENABLED = 'segment_analytics/general/enabled';
 
     /**
-     * Wrapper for getting configuration value
+     * Wrapper for getting a configuration value
      *
      * @param string $path
      * @param int $storeId
@@ -27,7 +27,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
-     * Get country by IP if user have not logging
+     * Get country by IP if user is not logged in
      *
      * @return string
      */
@@ -68,6 +68,28 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         $categoryName = Mage::getModel('catalog/category')->load($categoryIds[0])->getName();
 
         return $categoryName;
+    }
+
+    /**
+     * Get details of current viewed product
+     *
+     * @param $product
+     * @return array
+     */
+    public function getProductData($product)
+    {
+        if ($product->getId()) {
+            $productData = array(
+                'id' => $product->getId(),
+                'sku' => $product->getSku(),
+                'name' => $product->getName(),
+                'price' => $product->getFinalPrice(),
+                'category' => $this->getCategoryItemProduct($product->getId())
+            );
+            return $productData;
+        } else {
+            return NULL;
+        }
     }
 }
 

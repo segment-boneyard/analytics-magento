@@ -10,16 +10,11 @@
 ?>
 <?php if (Mage::getStoreConfig('segment_analytics/general/active')):?>
     <?php $product = Mage::registry('product'); ?>
+    <?php $productData = json_encode(Mage::helper('segment_analytics')->getProductData($product)); ?>
 
-    <script type="text/javascript">
+    <script id="segmentio-analytics-product" type="text/javascript">
     //<![CDATA[
-        analytics.track('Viewed Product', {
-            id: '<?php echo $product->getId()?>',
-            sku: '<?php echo $product->getSku()?>',
-            name: '<?php echo $product->getName()?>',
-            price: '<?php echo $product->getFinalPrice()?>',
-            category: '<?php echo Mage::helper('segment_analytics')->getCategoryItemProduct($product->getId())?>'
-        });
+        analytics.track('Viewed Product', <?php echo $productData ?>);
     //]]>
     </script>
 <?php endif; ?>
