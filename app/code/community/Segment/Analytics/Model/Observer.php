@@ -41,7 +41,6 @@ class Segment_Analytics_Model_Observer
     public function deleteFromCartAfter($observer)
     {
         $product = $observer->getQuoteItem()->getProduct();
-
         $categories = $product->getCategoryIds();
         $categoryName =  Mage::getModel('catalog/category')->load($categories[0])->getName();
 
@@ -75,7 +74,7 @@ class Segment_Analytics_Model_Observer
             'name' => $product->getName(),
             'price' => $product->getPrice(),
             'category' => $categoryName,
-            'event' => 'Added Product to Wishlist'
+            'event' => 'Wishlisted Product'
         );
 
         Mage::getSingleton('customer/session')->setData('addWishlistProduct', $addWishlistProduct);
@@ -100,7 +99,7 @@ class Segment_Analytics_Model_Observer
             'name' => $product->getName(),
             'price' => $product->getPrice(),
             'category' => $categoryName,
-            'event' => 'Reviewed Product'
+            'event' => 'Reviewed Product'
         );
 
         Mage::getSingleton('customer/session')->setData('reviewProduct', $reviewProduct);

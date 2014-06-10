@@ -10,7 +10,7 @@
  */
 ?>
 <?php if (Mage::getStoreConfig('segment_analytics/general/active')): ?>
-    <script type="text/javascript">
+    <script id="segmentio-analytics-init" type="text/javascript">
     //<![CDATA[
         window.analytics||(window.analytics=[]),window.analytics.methods=[
             "identify","track","trackLink","trackForm","trackClick","trackSubmit",
@@ -39,18 +39,12 @@
     //]]>
     </script>
 
-    <?php $userData = $this->getUserData(); ?>
-        <?php if ($userData['customerId']) : ?>
-            <script type="text/javascript">
+    <?php $userData = json_encode($this->getUserData()); ?>
+        <?php if ($this->getUserId()) : ?>
+            <script id="segmentio-analytics-identify" type="text/javascript">
                 //<![CDATA[
-                var segmCustomerId = 'id_' + '<?php echo $userData['customerId']; ?>';
-                analytics.identify(segmCustomerId, {
-                    Email : '<?php echo $userData['customerEmail']; ?>',
-                    Name : '<?php echo $userData['customerFirstname'] . ' ' . $userData['customerLastname']; ?>',
-                    City: '<?php echo $userData['customerAddressCity']; ?>',
-                    Region: '<?php echo $userData['customerAddressRegion']; ?>',
-                    Country: '<?php echo NULL !== $userData['customerAddressCountry'] ? $userData['customerAddressCountry'] : Mage::helper('segment_analytics')->getCountry(); ?>'
-                });
+                var segmCustomerId = 'id_' + '<?php echo $this->getUserId(); ?>';
+                analytics.identify(segmCustomerId, <?php echo $userData ?>);
                 analytics.track('Registered');
                 //]]>
             </script>

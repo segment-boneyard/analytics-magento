@@ -64,7 +64,7 @@
         <layout>
             <updates>
                 <segment_analytics module="Segment_Analytics">
-                    <file>segment/segment.xml</file>
+                    <file>segment/analytics.xml</file>
                 </segment_analytics>
             </updates>
         </layout>
