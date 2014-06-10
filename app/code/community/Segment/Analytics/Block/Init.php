@@ -33,7 +33,7 @@ class Segment_Analytics_Block_Init extends Mage_Core_Block_Template
                         Mage::getModel('directory/country')->loadByCode($customerAddress->getCountry())->getName()
                     );
                 } else {
-                    $userDataAddress = array('address'=>'not detected');
+                    $userDataAddress = array('address'=>'');
                 }
             }
 
