@@ -1,10 +1,13 @@
 ## Installation
+
 To install the extension you need to have Magento CE 1.6+ or Magento EE 1.11+.
+
 - Copy contents of the extension's folder to your Magento root folder
-- Go to *Admin->System->Cache Management* and push the 'Flush Cache Storage' button
+- Go to `Admin->System->Cache Management` and push the 'Flush Cache Storage' button
 - Log out from the admin panel (this step is required)
 - Login to admin panel
 - Go to *Admin->System->Configuration*, find Segment.io tab and enter your Segment.io key there
+
 If you don't see the Segment.io tab, perhaps you forgot to relogin into the admin panel as described above. 
 
 ## Running tests
