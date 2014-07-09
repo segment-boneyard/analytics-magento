@@ -1,0 +1,8 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_customerloggedin');
+?>
+<script type="text/javascript">
+    analytics.track('Customer Logged In',{
+    'user_id':segmentio_integration_customerloggedin.user_id
+    });
+</script>

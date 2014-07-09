@@ -1,0 +1,7 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_filtered');
+?>
+<script type="text/javascript">
+    analytics.track('Filtered Products',
+    segmentio_integration_filtered.params);
+</script>

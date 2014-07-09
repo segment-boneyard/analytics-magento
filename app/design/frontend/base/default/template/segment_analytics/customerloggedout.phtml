@@ -1,0 +1,8 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_customerloggedout');
+?>
+<script type="text/javascript">
+    analytics.track('Customer Logged Out',{
+    'user_id':segmentio_integration_customerloggedout.user_id
+    });
+</script>

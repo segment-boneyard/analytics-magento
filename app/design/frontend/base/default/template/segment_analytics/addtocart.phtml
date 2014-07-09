@@ -1,0 +1,8 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_addtocart');
+?>
+<script type="text/javascript">
+    analytics.track('Added Product',{
+        'sku':segmentio_integration_addtocart.sku
+    })
+</script>

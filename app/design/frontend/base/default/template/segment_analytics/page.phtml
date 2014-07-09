@@ -1,0 +1,14 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_page');
+?>
+<script type="text/javascript">     
+    if(segmentio_integration_page.category_names)
+    {
+        //window.analytics.page.apply(window.analytics.page, segmentio_integration_page.category_names);
+        window.analytics.page(segmentio_integration_page.full_category_name, segmentio_integration_page.page_title);        
+    }
+    else
+    {
+        window.analytics.page(segmentio_integration_page.page_name);
+    }    
+</script>

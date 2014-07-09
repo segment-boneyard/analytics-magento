@@ -1,0 +1,8 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_removefromcart');
+?>
+<script type="text/javascript">
+    analytics.track('Removed Product',{
+        'sku':segmentio_integration_removefromcart.sku
+    })
+</script>

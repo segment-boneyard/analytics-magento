@@ -1,0 +1,17 @@
+<?php    
+    throw new Exception("Not used anymore, look at page.phtml");
+    echo $this->getLayout()->createBlock('segmentio_integration/json')
+    ->setData($this->getData())
+    ->setVarName('segmentio_integration_category')
+    ->toHtml();
+?>
+<script type="text/javascript">
+    if(segmentio_integration_category.category_child)
+    {
+        analytics.page(segmentio_integration_category.category_parent);
+    }
+    else
+    {
+        analytics.page(segmentio_integration_category.category_parent);
+    }    
+</script>

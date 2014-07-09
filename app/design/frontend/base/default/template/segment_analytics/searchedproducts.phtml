@@ -1,0 +1,8 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_searched');
+?>
+<script type="text/javascript">
+    analytics.track('Searched Products',{
+        'query_text':segmentio_integration_searched.query_text
+    })
+</script>

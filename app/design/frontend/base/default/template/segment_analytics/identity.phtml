@@ -1,0 +1,15 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_identity');
+?>
+<script type="text/javascript">
+    var segmentio_integration_identity_to_send = {};
+    for(index in segmentio_integration_identity)
+    {
+        if(!segmentio_integration_identity.hasOwnProperty(index)) { continue; }
+        if(['user_id','key'].indexOf(index) !== -1 ){ continue; }
+        segmentio_integration_identity_to_send[index] = segmentio_integration_identity[index];
+    }
+    analytics.identify(segmentio_integration_identity.user_id, 
+    segmentio_integration_identity_to_send);
+    
+</script>

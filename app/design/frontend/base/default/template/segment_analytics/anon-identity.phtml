@@ -1,0 +1,9 @@
+<?php
+    echo $this->renderDataAsJsonVar('segmentio_integration_anon_identity');
+?>
+
+<script type="text/javascript">
+    $(document).observe('dom:loaded', function(){        
+        analytics.identify(segmentio_integration_anon_identity.anon_user_id, {}); 
+    });
+</script>
