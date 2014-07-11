@@ -20,6 +20,6 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
     
     public function isEnabled()
     {
-        return $this->isAdmin() && $this->getSecretKey();
+        return !$this->isAdmin() && $this->getSecretKey();
     }
 }
