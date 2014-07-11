@@ -3,8 +3,14 @@ class Segment_Analytics_Model_Controller_Customerloggedout extends Segment_Analy
 {
     public function getBlock($block)
     {
-        $customer = $this->_getCustomer();
-        $block->setUserId($customer->getId());    
+        $customer = $block->getCustomer();
+        
+        foreach(array('password_hash') as $key)
+        {
+            if(!array_key_exists($key, $customer)) { continue; }
+            unset($customer[$key]);
+        }
+        $block->setUserId($customer['entity_id']);    
         return $block;
     }
 }

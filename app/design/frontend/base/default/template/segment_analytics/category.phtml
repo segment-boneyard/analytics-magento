@@ -1,17 +1,17 @@
 <?php    
     throw new Exception("Not used anymore, look at page.phtml");
-    echo $this->getLayout()->createBlock('segmentio_integration/json')
+    echo $this->getLayout()->createBlock('segment_analytics/json')
     ->setData($this->getData())
-    ->setVarName('segmentio_integration_category')
+    ->setVarName('segment_analytics_category')
     ->toHtml();
 ?>
 <script type="text/javascript">
-    if(segmentio_integration_category.category_child)
+    if(segment_analytics_category.category_child)
     {
-        analytics.page(segmentio_integration_category.category_parent);
+        analytics.page(segment_analytics_category.category_parent);
     }
     else
     {
-        analytics.page(segmentio_integration_category.category_parent);
+        analytics.page(segment_analytics_category.category_parent);
     }    
 </script>

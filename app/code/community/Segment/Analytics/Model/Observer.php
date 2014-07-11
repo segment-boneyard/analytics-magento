@@ -21,7 +21,7 @@ class Segment_Analytics_Model_Observer
             return;
         }
         
-        if(Mage::helper('segment_analytics')->isAdmin())
+        if(Mage::helper('segment_analytics')->isEnabled())
         {
             return;
         }
@@ -54,7 +54,7 @@ class Segment_Analytics_Model_Observer
         {
             return;
         }    
-        if(Mage::helper('segment_analytics')->isAdmin())
+        if(Mage::helper('segment_analytics')->isEnabled())
         {
             return;
         }        
@@ -75,7 +75,9 @@ class Segment_Analytics_Model_Observer
     public function loggedOut($observer)    
     {
         $front = Segment_Analytics_Model_Front_Controller::getInstance();            
-        $front->addDeferredAction('customerloggedout');
+        $front->addDeferredAction('customerloggedout', array(
+            'customer'=>$this->_getCustomerData()
+        ));
     }  
     
     public function addToCart($observer)
@@ -208,4 +210,24 @@ class Segment_Analytics_Model_Observer
         Mage::Log($observer->getTransport()->getHtml(), Zend_Log::INFO, 'segment.log');
     }
     
+    protected function _getCustomer()
+    {
+        $customer       = Mage::getSingleton('customer/session')->getCustomer();            
+        
+        //pull entire customer, including eav attributes not initially populated
+        $full_customer = Mage::getModel('customer/customer')->getCollection()
+        ->addAttributeToSelect('*')->addFieldToFilter('entity_id', $customer->getId())
+        ->getFirstItem();
+        return $full_customer;
+    }        
+    
+    protected function _getCustomerData()
+    {
+        $customer = $this->_getCustomer();
+        if($customer)
+        {
+            return $customer->getData();
+        }
+        return array();
+    }
 }

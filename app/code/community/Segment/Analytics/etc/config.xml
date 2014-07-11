@@ -177,6 +177,36 @@
               </segment_analyticsmore_sales_logger>
             </observers>                                
           </core_block_abstract_to_html_after>
+
+          <controller_action_predispatch_customer_account_logout>
+            <observers>
+              <segment_analyticsmore_sales_logger>
+                <type>singleton</type>
+                <class>segment_analytics/observer_customer</class>
+                <method>grabCustomerId</method>
+              </segment_analyticsmore_sales_logger>
+            </observers>                                          
+          </controller_action_predispatch_customer_account_logout>
+          
+          <controller_action_postdispatch_customer_account_logout>
+            <observers>
+              <segment_analyticsmore_sales_logger>
+                <type>singleton</type>
+                <class>segment_analytics/observer_customer</class>
+                <method>addCustomerIdParamater</method>
+              </segment_analyticsmore_sales_logger>
+            </observers>                                          
+          </controller_action_postdispatch_customer_account_logout>
+          
+          <controller_action_layout_generate_blocks_after>
+            <observers>
+              <segment_analyticsmore_sales_logger>
+                <type>singleton</type>
+                <class>segment_analytics/observer_customer</class>
+                <method>addCustomerTrackingIfIdPresent</method>
+              </segment_analyticsmore_sales_logger>
+            </observers>                                          
+          </controller_action_layout_generate_blocks_after>
           
         </events>
 	

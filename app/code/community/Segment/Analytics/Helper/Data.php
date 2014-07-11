@@ -1,9 +1,11 @@
 <?php
-class Segment_Analytics_Helper_Data
+class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
 {
     public function getSecretKey()
     {
-        return '0n1mip8hyd';
+        
+        return Mage::getStoreConfig('segment_analytics/options/key');
+        // return '0n1mip8hyd';
     }
     
     public function getAnonUserId()
@@ -14,5 +16,10 @@ class Segment_Analytics_Helper_Data
     public function isAdmin()
     {
         return Mage::app()->getStore()->isAdmin();
+    }
+    
+    public function isEnabled()
+    {
+        return $this->isAdmin() && $this->getSecretKey();
     }
 }

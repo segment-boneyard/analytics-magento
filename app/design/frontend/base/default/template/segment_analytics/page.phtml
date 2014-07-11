@@ -1,14 +1,14 @@
 <?php
-    echo $this->renderDataAsJsonVar('segmentio_integration_page');
+    echo $this->renderDataAsJsonVar('segment_analytics_page');
 ?>
 <script type="text/javascript">     
-    if(segmentio_integration_page.category_names)
+    if(segment_analytics_page.category_names)
     {
-        //window.analytics.page.apply(window.analytics.page, segmentio_integration_page.category_names);
-        window.analytics.page(segmentio_integration_page.full_category_name, segmentio_integration_page.page_title);        
+        //window.analytics.page.apply(window.analytics.page, segment_analytics_page.category_names);
+        window.analytics.page(segment_analytics_page.full_category_name, segment_analytics_page.page_title);        
     }
     else
     {
-        window.analytics.page(segmentio_integration_page.page_name);
+        window.analytics.page(segment_analytics_page.page_name);
     }    
 </script>

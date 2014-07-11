@@ -78,5 +78,5 @@ abstract class Segment_Analytics_Model_Controller_Base
         ->addAttributeToSelect('*')->addFieldToFilter('entity_id', $customer->getId())
         ->getFirstItem();
         return $full_customer;
-    }    
+    }  
 }
