@@ -21,7 +21,7 @@ class Segment_Analytics_Model_Observer
             return;
         }
         
-        if(Mage::helper('segment_analytics')->isEnabled())
+        if(!Mage::helper('segment_analytics')->isEnabled())
         {
             return;
         }
@@ -54,7 +54,7 @@ class Segment_Analytics_Model_Observer
         {
             return;
         }    
-        if(Mage::helper('segment_analytics')->isEnabled())
+        if(!Mage::helper('segment_analytics')->isEnabled())
         {
             return;
         }        

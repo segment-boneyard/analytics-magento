@@ -18,6 +18,7 @@
 	</frontend>
 	<global>
         <events>
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_scripts_addfrontend>
@@ -27,7 +28,7 @@
               </segment_analyticsmore_scripts_addfrontend>
             </observers>
           </controller_action_layout_generate_blocks_after>          
-          
+
           <customer_login>
             <observers>
               <segment_analyticsmore_scripts>
@@ -208,6 +209,7 @@
             </observers>                                          
           </controller_action_layout_generate_blocks_after>
           
+        
         </events>
 	
 		<blocks>
