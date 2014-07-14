@@ -7,6 +7,12 @@ class Segment_Analytics_Block_Json extends Mage_Core_Block_Abstract
         $data   = $this->getDataWithoutExtras();  
         $json   = Mage::helper("core")->jsonEncode($data);
         $json   = preg_replace('%[\r\n]%','',$json);
+        
+        if($this->getAsRawObject())
+        {
+            return $json;    
+        }
+        
         return '<script type="text/javascript">' . 
         '    var ' . $var . " = " . $json . ";\n" .         
         '</script>';
@@ -18,6 +24,7 @@ class Segment_Analytics_Block_Json extends Mage_Core_Block_Abstract
         unset($data['type']);
         unset($data['module_name']);
         unset($data['var_name']);
+        unset($data['as_raw_object']);
         return $data;
     }
 }
