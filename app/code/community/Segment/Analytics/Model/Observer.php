@@ -113,7 +113,7 @@ class Segment_Analytics_Model_Observer
         if(!$o){return;}
         $front      = Segment_Analytics_Model_Front_Controller::getInstance();            
         $front->addDeferredAction('searchedproducts',
-            array('query_text'=>$o->getQueryText())
+            array('query'=>$o->getQueryText())
         );                    
     }
     
