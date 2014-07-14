@@ -7,11 +7,6 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         // return '0n1mip8hyd';
     }
     
-    public function getAnonUserId()
-    {
-        return 'anon-' . (md5(session_id() . '::' . (string)Mage::getConfig()->getNode('global/crypt/key')));
-    }
-    
     public function isAdmin()
     {
         return Mage::app()->getStore()->isAdmin();
