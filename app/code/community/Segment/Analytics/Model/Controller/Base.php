@@ -13,7 +13,7 @@ abstract class Segment_Analytics_Model_Controller_Base
     
     protected function _getDefaultBlock()
     {
-        $key = Mage::helper('segment_analytics')->getSecretKey();    
+        $key = Mage::helper('segment_analytics')->getWriteKey();    
         $block = $this->getLayout()->createBlock('segment_analytics/template')
         ->setTemplate('segment_analytics/'.$this->getName().'.phtml')
         ->setKey($key);

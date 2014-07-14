@@ -7,7 +7,7 @@ class Segment_Analytics_Model_Analytics
         $path = Mage::getModuleDir('', 'Segment_Analytics') . DS . 'external-lib' . DS . 'Analytics.php';        
         include($path);        
 
-        $key = Mage::helper('segment_analytics')->getSecretKey();
+        $key = Mage::helper('segment_analytics')->getWriteKey();
 
         Analytics::init($key, array(
           "on_error" => function ($code, $message) {

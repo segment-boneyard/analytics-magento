@@ -19,8 +19,8 @@
                     <fields>
 						<key>
 							<!-- http://alanstorm.com/magento_system_configuration_in_depth_tutorial -->
-                            <label>Key</label>
-                            <comment>Your Unique Segment Key</comment>
+                            <label>Write Key</label>
+                            <comment>Your Unique Write Segment Key</comment>
                             <frontend_type>text</frontend_type>
 							<!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
 							<!-- <backend_model>core/config_data</backend_model>							 -->
