@@ -1,26 +1,19 @@
 <config>
 	<sections>
-		<segment_analytics translate="label" module="segment_analytics">
-            <label>Segment</label>
-            <tab>advanced</tab>
-            <frontend_type>text</frontend_type>
-            <sort_order>910</sort_order>
-            <show_in_default>1</show_in_default>
-            <show_in_website>1</show_in_website>
-            <show_in_store>1</show_in_store>	
+		<general translate="label" module="segment_analytics">
             <groups>
-				<options>
-                    <label>Options</label>
+				<segment_analytics>
+                    <label>Analytics</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>1</sort_order>
+                    <sort_order>9999</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>				
                     <fields>
-						<key>
+						<write_key>
 							<!-- http://alanstorm.com/magento_system_configuration_in_depth_tutorial -->
                             <label>Write Key</label>
-                            <comment>Your Unique Write Segment Key</comment>
+                            <comment>Your Unique Segment Write Key</comment>
                             <frontend_type>text</frontend_type>
 							<!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
 							<!-- <backend_model>core/config_data</backend_model>							 -->
@@ -28,10 +21,10 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                    
-						</key>				
+						</write_key>				
 					</fields>
-				</options>				
+				</segment_analytics>				
 			</groups>
-		</segment_analytics>
+		</general>
 	</sections>
 </config>
