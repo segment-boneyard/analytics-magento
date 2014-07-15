@@ -1,9 +1,22 @@
 <config>
+    <tabs>
+        <segment_analytics translate="label" module="segment_analytics">
+            <label>Analytics</label>
+            <sort_order>101</sort_order>
+        </segment_analytics>    
+    </tabs>
 	<sections>
-		<general translate="label" module="segment_analytics">
+		<segment_analytics translate="label" module="segment_analytics">
+            <label>Segment</label>
+            <tab>segment_analytics</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>101</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>		
             <groups>
-				<segment_analytics>
-                    <label>Analytics</label>
+				<options>
+                    <label>Options</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>9999</sort_order>
                     <show_in_default>1</show_in_default>
@@ -23,8 +36,8 @@
                             <show_in_store>1</show_in_store>                    
 						</write_key>				
 					</fields>
-				</segment_analytics>				
+				</options>				
 			</groups>
-		</general>
+		</segment_analytics>
 	</sections>
 </config>
