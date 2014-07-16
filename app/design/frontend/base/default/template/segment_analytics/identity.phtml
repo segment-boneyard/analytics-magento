@@ -10,6 +10,7 @@
         segment_analytics_identity_to_send[index] = segment_analytics_identity[index];
     }
     analytics.identify(segment_analytics_identity.user_id, 
-    segment_analytics_identity_to_send);
+    segment_analytics_identity_to_send,
+    <?php echo $this->getContextJson(); ?>);
     
 </script>

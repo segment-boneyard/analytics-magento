@@ -3,6 +3,7 @@
 ?>
 <script type="text/javascript">
     analytics.track('Added Product',{
-        'sku':segment_analytics_addtocart.sku
+        'sku':segment_analytics_addtocart.sku,
+        <?php echo $this->getContextJson(); ?>        
     });
 </script>

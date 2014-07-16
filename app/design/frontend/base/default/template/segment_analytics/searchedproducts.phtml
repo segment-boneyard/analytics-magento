@@ -4,5 +4,6 @@
 <script type="text/javascript">
     analytics.track('Searched Products',{
         'query':segment_analytics_searched.query_text
-    });
+    },
+    <?php echo $this->getContextJson(); ?>  );
 </script>
