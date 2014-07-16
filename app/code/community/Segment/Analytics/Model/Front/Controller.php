@@ -21,16 +21,17 @@ class Segment_Analytics_Model_Front_Controller
     public function addDeferredAction($action, $action_data=array())
     {
         Mage::Log("Adding Deferred Action $action");
+        
+        $o_action = new stdClass;
+        $o_action->action = $action;
+        $o_action->data   = $action_data;
+        
         $session        = $this->_getSession();
         $deferred       = $session->getDeferredActions();
         $deferred       = $deferred ? $deferred : array();
-        $deferred[]     = $action;
+        $deferred[]     = $o_action;
         $session->setDeferredActions($deferred);
         
-        $data           = $session->getDeferredActionsData();
-        $data           = $data ? $data : array();
-        $data[$action]  = $action_data;
-        $session->setDeferredActionsData($data);
         return $this;
     }
     
@@ -50,16 +51,7 @@ class Segment_Analytics_Model_Front_Controller
         $actions = $actions ? $actions : array();
         return $actions;
     }
-    
-    public function getDeferredActionsDataForAction($action)
-    {
         
-        $data = Mage::getSingleton('segment_analytics/session')
-        ->getDeferredActionsData();
-        $data = $data ? $data : array();        
-        return array_key_exists($action, $data) ? $data[$action] : null;
-    }
-    
     protected function _getSession()
     {
         return Mage::getSingleton('segment_analytics/session');
@@ -80,17 +72,17 @@ class Segment_Analytics_Model_Front_Controller
             $class = 'Segment_Analytics_Model_Controller_' . ucwords($action);
             $controller = new $class;
             $controller->setName($action)
-            ->setData($this->getDeferredActionsDataForAction($action));
-            $blocks[$action] = $controller->dispatch();
+            ->setData($this->_actionsData[$action]);
+            $blocks[$action][] = $controller->dispatch();
         }
         
         foreach($this->getDeferredActions() as $action)
         {
-            $class = 'Segment_Analytics_Model_Controller_' . ucwords($action);
+            $class = 'Segment_Analytics_Model_Controller_' . ucwords($action->action);
             $controller = new $class;
-            $controller->setName($action)
-            ->setData($this->getDeferredActionsDataForAction($action));
-            $blocks[$action] = $controller->dispatch();        
+            $controller->setName($action->action)
+            ->setData($action->data);
+            $blocks[$action->action][] = $controller->dispatch();        
         }
         
         //reorder based on sort priority, filter out !blocks
@@ -101,7 +93,7 @@ class Segment_Analytics_Model_Front_Controller
         foreach($orders as $order)
         {
             $action = $sort_order[$order];
-            if(!array_key_exists($action, $blocks)) { continue; } 
+            if(!array_key_exists($action, $blocks)) { continue; }             
             $blocks_ordered[$action] = $blocks[$action];
             unset($blocks[$action]);
         }
@@ -111,11 +103,19 @@ class Segment_Analytics_Model_Front_Controller
         {
             $blocks_ordered[] = $block;
         }
-        $this->clearDeferredActions();
-        
-        // var_dump(array_keys($blocks_ordered));
+        $this->clearDeferredActions();        
 
-        return $blocks_ordered;
+        //flatten array
+        $final = array();
+        foreach($blocks_ordered as $array)
+        {
+            foreach($array as $block)
+            {
+                $final[] = $block;
+            }
+            
+        }
+        return $final;
     }
     
     protected function getSortOrder()
