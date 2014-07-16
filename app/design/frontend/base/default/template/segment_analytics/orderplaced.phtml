@@ -1,6 +1,6 @@
 <?php echo $this->renderDataAsJsonVar("segment_analytics_orderplaced");?>
 <script type="text/javascript">
     analytics.track("Completed Order",
-    segment_analytics_orderplaced.params,
+    <?php echo $this->renderDataAsJsonObject('params'); ?>,
     <?php echo $this->getContextJson(); ?>);
 </script>    

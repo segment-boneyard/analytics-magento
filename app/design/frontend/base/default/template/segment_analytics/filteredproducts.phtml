@@ -3,6 +3,6 @@
 ?>
 <script type="text/javascript">
     analytics.track('Filtered Products',
-    segment_analytics_filtered.params,
+    <?php echo $this->renderDataAsJsonObject('params'); ?>,
     <?php echo $this->getContextJson(); ?>);
 </script>

@@ -2,8 +2,6 @@
     echo $this->renderDataAsJsonVar('segment_analytics_removefromcart');
 ?>
 <script type="text/javascript">
-    analytics.track('Removed Product',{
-        'sku':segment_analytics_removefromcart.sku
-    },
+    analytics.track('Removed Product',{'sku':segment_analytics_removefromcart.sku},
     <?php echo $this->getContextJson(); ?>  );
 </script>

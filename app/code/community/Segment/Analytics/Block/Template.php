@@ -9,11 +9,11 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
         ->toHtml();
     }
     
-    public function renderDataAsJsonObject()
+    public function renderDataAsJsonObject($key=false)
     {
+        $data = $key ? $this->getData($key) : $this->getData();
         return $this->getLayout()->createBlock('segment_analytics/json')
-        ->setData($this->getData())
-        ->setVarName($var_name)
+        ->setData($data)
         ->setAsRawObject(true)
         ->toHtml();    
     }
@@ -25,11 +25,7 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
             'library'=> array(
                 'name'=>'analytics-magento',
                 'version'=>'0.0.1'
-        )));
-            
-//         var_dump();
-//         
-//         var_dump($renderer);            
+        )));       
         return $renderer->toJsonString();
     }
 }
