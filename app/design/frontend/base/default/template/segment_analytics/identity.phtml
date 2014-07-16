@@ -1,16 +1,13 @@
 <?php
     echo $this->renderDataAsJsonVar('segment_analytics_identity');
+    $json_to_send = Mage::helper('core')->jsonDecode($this->renderDataAsJsonObject());
+    unset($json_to_send['key']);
+    unset($json_to_send['user_id']);
+    $json_to_send = Mage::helper('core')->jsonEncode($json_to_send);    
 ?>
 <script type="text/javascript">
-    var segment_analytics_identity_to_send = {};
-    for(index in segment_analytics_identity)
-    {
-        if(!segment_analytics_identity.hasOwnProperty(index)) { continue; }
-        if(['user_id','key'].indexOf(index) !== -1 ){ continue; }
-        segment_analytics_identity_to_send[index] = segment_analytics_identity[index];
-    }
     analytics.identify(segment_analytics_identity.user_id, 
-    segment_analytics_identity_to_send,
+    <?php echo $json_to_send; ?>,
     <?php echo $this->getContextJson(); ?>);
     
 </script>

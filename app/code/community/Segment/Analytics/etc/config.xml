@@ -126,6 +126,16 @@
               </segment_analyticsmore_review_view>
             </observers>                    
           </controller_action_layout_generate_blocks_after>
+
+          <controller_action_layout_generate_blocks_after>
+            <observers>
+              <segment_analyticsmore_review_view>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>productView</method>
+              </segment_analyticsmore_review_view>
+            </observers>                    
+          </controller_action_layout_generate_blocks_after>          
           
           <review_save_after>
             <observers>
