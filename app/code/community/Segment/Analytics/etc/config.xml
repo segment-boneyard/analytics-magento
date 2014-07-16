@@ -129,11 +129,11 @@
 
           <controller_action_layout_generate_blocks_after>
             <observers>
-              <segment_analyticsmore_review_view>
+              <segment_analyticsmore_product_view>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>productView</method>
-              </segment_analyticsmore_review_view>
+              </segment_analyticsmore_product_view>
             </observers>                    
           </controller_action_layout_generate_blocks_after>          
           
