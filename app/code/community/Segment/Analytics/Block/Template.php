@@ -17,4 +17,13 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
         ->setAsRawObject(true)
         ->toHtml();    
     }
+    
+    public function renderPropertyAsJavascriptSafeStringWithQuotes($prop)
+    {        
+        $prop = (string) $this->getData($prop);
+        $prop .= "'\n";    
+        $prop = filter_var($prop,FILTER_UNSAFE_RAW,FILTER_FLAG_STRIP_LOW);  
+        $prop = str_replace("'", "\\'", $prop);        
+        return "'$prop'";
+    }
 }

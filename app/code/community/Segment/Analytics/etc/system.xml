@@ -1,14 +1,8 @@
 <config>
-    <tabs>
-        <segment_analytics translate="label" module="segment_analytics">
-            <label>Analytics</label>
-            <sort_order>101</sort_order>
-        </segment_analytics>    
-    </tabs>
 	<sections>
 		<segment_analytics translate="label" module="segment_analytics">
-            <label>Segment</label>
-            <tab>segment_analytics</tab>
+            <label>Analytics</label>
+            <tab>general</tab>
             <frontend_type>text</frontend_type>
             <sort_order>101</sort_order>
             <show_in_default>1</show_in_default>
@@ -16,7 +10,7 @@
             <show_in_store>1</show_in_store>		
             <groups>
 				<options>
-                    <label>Options</label>
+                    <label>Segment</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>9999</sort_order>
                     <show_in_default>1</show_in_default>
