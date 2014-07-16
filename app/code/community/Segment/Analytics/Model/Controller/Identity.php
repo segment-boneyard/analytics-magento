@@ -28,6 +28,14 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->setLastName($customer->getLastname())
         ->setMiddleName($customer->getMiddlename())
         ->addData($customer->getData())
+        ->setTotalOrders(
+            Mage::getSingleton('segment_analytics/query_totalpurchased')
+            ->fetchTotalOrders($customer->getId())
+        )
+        ->setTotalSpent(
+            Mage::getSingleton('segment_analytics/query_totalspent')
+            ->fetchTotalSpent($customer->getId())
+        )
         ->unsetData('password_hash')
         ->unsetData('firstname')
         ->unsetData('lastname')

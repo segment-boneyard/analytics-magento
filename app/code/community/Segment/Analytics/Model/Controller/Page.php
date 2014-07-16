@@ -2,7 +2,7 @@
 class Segment_Analytics_Model_Controller_Page extends Segment_Analytics_Model_Controller_Base
 {
     public function getBlock($block)
-    {
+    {    
         $names      = $this->_getCategoryNames();
         $product    = $this->_getCurrentProduct();
         if($names)
