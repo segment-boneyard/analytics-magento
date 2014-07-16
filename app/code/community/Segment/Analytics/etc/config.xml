@@ -17,6 +17,14 @@
 		</routers>
 	</frontend>
 	<global>
+	    <resources>         
+            <segment_analytics_setup>
+                <setup>
+                    <module>Segment_Analytics</module>
+                    <class>Segment_Analytics_Model_Resource_Setup</class>
+                </setup>
+            </segment_analytics_setup>	    
+	    </resources>
         <events>
 
           <controller_action_layout_generate_blocks_after>
