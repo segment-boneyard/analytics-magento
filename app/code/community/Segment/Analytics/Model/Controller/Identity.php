@@ -23,9 +23,15 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->setTaxClassId($customer->getTaxClassId())
         ->setSharedStoreIds((array)$customer->getSharedStoreIds())
         ->setSharedWebsiteIds((array)$customer->getSharedWebsiteIds())
-        ->setGenderLabel($gender_label)
+        ->setGender($gender_label)
+        ->setFirstName($block->getFirstname())
+        ->setLastName($block->getLastname())
+        ->setMiddleName($block->getMiddlename())
         ->addData($customer->getData())
-        ->unsetData('password_hash');             
+        ->unsetData('password_hash')            
+        ->unsetData('lasname')
+        ->unsetData('firstname')
+        ->unsetData('middlename');
         
         return $block;
     }
