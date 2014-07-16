@@ -24,13 +24,13 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->setSharedStoreIds((array)$customer->getSharedStoreIds())
         ->setSharedWebsiteIds((array)$customer->getSharedWebsiteIds())
         ->setGender($gender_label)
-        ->setFirstName($block->getFirstname())
-        ->setLastName($block->getLastname())
-        ->setMiddleName($block->getMiddlename())
+        ->setFirstName($customer->getFirstname())
+        ->setLastName($customer->getLastname())
+        ->setMiddleName($customer->getMiddlename())
         ->addData($customer->getData())
-        ->unsetData('password_hash')            
-        ->unsetData('lasname')
+        ->unsetData('password_hash')
         ->unsetData('firstname')
+        ->unsetData('lastname')
         ->unsetData('middlename');
         
         return $block;
