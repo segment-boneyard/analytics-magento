@@ -141,26 +141,26 @@ class Segment_Analytics_Model_Observer
         
     }
     
-//     public function productView($observer)
-//     {
-//         $action = $observer->getAction();
-//         if(!$action){ return; }
-//         
-//         $request = $action->getRequest();
-//         if(!$request) { return; }
-//         
-//         $params = $request->getParams();
-//         
-//         if (!in_array($action->getFullActionName(), array('catalog_product_view')))
-//         {
-//             return;
-//         }    
-//         
-//         $front      = Segment_Analytics_Model_Front_Controller::getInstance();            
-//         $front->addDeferredAction('viewedproduct',
-//             array('params'=>$params)
-//         );          
-//     }
+    public function productView($observer)
+    {
+        $action = $observer->getAction();
+        if(!$action){ return; }
+        
+        $request = $action->getRequest();
+        if(!$request) { return; }
+        
+        $params = $request->getParams();
+        
+        if (!in_array($action->getFullActionName(), array('catalog_product_view')))
+        {
+            return;
+        }    
+        
+        $front      = Segment_Analytics_Model_Front_Controller::getInstance();            
+        $front->addDeferredAction('viewedproduct',
+            array('params'=>$params)
+        );          
+    }
     
     public function reviewView($observer)
     {
