@@ -16,7 +16,7 @@ class Segment_Analytics_Model_Controller_Viewedproduct extends Segment_Analytics
         ->addFieldToFilter('entity_id', array('in'=>$product['category_ids']));    
         foreach($categories as $category)
         {
-            $product['category_names'][] = $category->getName();            
+            $product['categories'][] = $category->getName();            
         }
                 
         $block->setProduct($product);
