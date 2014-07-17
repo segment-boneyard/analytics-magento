@@ -16,6 +16,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->getOptionText($customer->getData('gender'));
         
         $block->setUserId($customer->getId())
+        ->addData($customer->getData())
         ->setFullName($customer->getName())
         ->setName($customer->getName())
         ->setEmail($customer->getEmail())        
@@ -26,8 +27,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->setGender($gender_label)
         ->setFirstName($customer->getFirstname())
         ->setLastName($customer->getLastname())
-        ->setMiddleName($customer->getMiddlename())
-        ->addData($customer->getData())
+        ->setMiddleName($customer->getMiddlename())        
         ->setTotalOrders(
             Mage::getSingleton('segment_analytics/query_totalpurchased')
             ->fetchTotalOrders($customer->getId())
