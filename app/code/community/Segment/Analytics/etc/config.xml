@@ -137,6 +137,16 @@
             </observers>                    
           </controller_action_layout_generate_blocks_after>          
           
+          <core_abstract_save_after>
+            <observers>
+              <segment_analyticsmore_amasty_fav_save_after>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>favSaved</method>
+              </segment_analyticsmore_amasty_fav_save_after>
+            </observers>                        
+          </core_abstract_save_after>
+          
           <review_save_after>
             <observers>
               <segment_analyticsmore_review_save_after>

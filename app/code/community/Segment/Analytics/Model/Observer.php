@@ -162,6 +162,19 @@ class Segment_Analytics_Model_Observer
         );          
     }
     
+    public function favSaved($observer)
+    {
+        $front  = Segment_Analytics_Model_Front_Controller::getInstance();            
+        $item   = $observer->getData('data_object');
+        
+        if($item->getResourceName() == 'amlist/item')
+        {
+            $front->addDeferredAction('amlistfav',
+                array('product_id'=>$item->getData('product_id'))
+            );          
+        }
+    }
+    
     public function reviewView($observer)
     {
         $action = $observer->getAction();
