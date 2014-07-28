@@ -8,6 +8,9 @@ class Segment_Analytics_Model_Controller_Viewedreviews extends Segment_Analytics
         $info   = Mage::getModel('catalog/product_api')
         ->info($params['id']);
         
+        $info   = Mage::helper('segment_analytics')
+        ->getNormalizedProductInformation($info); 
+        
         $want = array('sku', 'price', 'name');
         foreach($info as $key=>$value)
         {
