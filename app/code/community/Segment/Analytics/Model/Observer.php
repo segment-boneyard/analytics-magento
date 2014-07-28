@@ -222,7 +222,7 @@ class Segment_Analytics_Model_Observer
         );          
 
     }
-    
+        
     public function orderPlaced($observer)
     {
         $front      = Segment_Analytics_Model_Front_Controller::getInstance();            

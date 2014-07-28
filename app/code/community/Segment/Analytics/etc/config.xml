@@ -117,6 +117,26 @@
             </observers>                    
           </controller_action_layout_generate_blocks_after>
           
+          <catalog_product_collection_apply_limitations_after>
+            <observers>
+              <segment_analyticsmore_catalog_product_collection_apply_limitations_after>
+                <type>singleton</type>
+                <class>segment_analytics/observer_layered</class>
+                <method>flagIsFiltered</method>
+              </segment_analyticsmore_catalog_product_collection_apply_limitations_after>
+            </observers>                              
+          </catalog_product_collection_apply_limitations_after>
+          
+          <controller_action_layout_generate_blocks_after>
+            <observers>
+              <segment_analyticsmore_category_view>
+                <type>singleton</type>
+                <class>segment_analytics/observer_layered</class>
+                <method>addLayeredLimitation</method>
+              </segment_analyticsmore_category_view>
+            </observers>                    
+          </controller_action_layout_generate_blocks_after>                    
+          
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_review_view>
