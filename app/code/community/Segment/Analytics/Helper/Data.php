@@ -60,6 +60,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         $as_float = array('price','weight');
         foreach($as_float as $key)
         {
+            if(!array_key_exists($key, $product)) { continue; }
             $product[$key] = (float) $product[$key];
         }
 
