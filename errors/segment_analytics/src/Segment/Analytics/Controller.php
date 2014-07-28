@@ -63,7 +63,10 @@ class Segment_Analytics_Controller
     */    
     static public function getBaseDir()
     {
-        if(strpos($_SERVER['REQUEST_URI'], 'report.php') !== false)
+        if(stripos( $_SERVER['REQUEST_URI'], 'report.php') !== false ||
+        stripos(    $_SERVER['REQUEST_URI'], '404.php') !== false ||
+        stripos(    $_SERVER['REQUEST_URI'], '503.php') !== false
+        )
         {
             return '../';
         }
