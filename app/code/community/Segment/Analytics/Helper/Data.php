@@ -45,10 +45,6 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         foreach($as_float as $key)
         {
             $product[$key] = (float) $product[$key];
-            if(is_numeric($product[$key]))
-            {
-                var_dump($key . '::' . $product[$key]);
-            }
         }
 
         
