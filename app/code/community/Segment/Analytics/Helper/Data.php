@@ -16,6 +16,22 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         return !$this->isAdmin() && $this->getWriteKey();
     }
     
+    public function getCategoryNamesFromIds($ids)
+    {
+        $ids = is_array($ids) ? $ids : array($ids);
+        $categories = Mage::getModel('catalog/category')->getCollection()
+        ->addAttributeToSelect('name')
+        ->addFieldToFilter('entity_id', array('in'=>$ids));    
+        
+        $names = array();
+        foreach($categories as $category)
+        {
+            $names[] = $category->getName();       
+        }
+        return $names;        
+    }
+    
+    
     public function getNormalizedProductInformation($product)
     {
         //if passed id, load the product
