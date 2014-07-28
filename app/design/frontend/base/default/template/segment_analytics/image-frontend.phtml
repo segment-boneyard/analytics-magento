@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    //,     
+    document.observe("dom:loaded", function() {
+        $$('.more-views img, .product-image-thumbs img').each(function(node){
+            node.observe('click',function(event){
+                var target = event.target ? event.target : event.srcElement;
+                if(!window.analytics)
+                {
+                    return;
+                }
+                if(!segment_analytics_viewedproduct || !segment_analytics_viewedproduct.params)
+                {
+                    return;
+                }
+                
+                window.analytics.track('Viewed Product Image',
+                    {'src':     target.src,
+                     'product': segment_analytics_viewedproduct.params}
+                );
+            });
+        });    
+    });    
+</script>

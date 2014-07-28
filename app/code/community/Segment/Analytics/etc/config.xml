@@ -109,6 +109,16 @@
           
           <controller_action_layout_generate_blocks_after>
             <observers>
+              <segment_analyticsmore_category_view_for_image_thumbs>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>viewedImageFrontendTrack</method>
+              </segment_analyticsmore_category_view_for_image_thumbs>
+            </observers>                              
+          </controller_action_layout_generate_blocks_after>
+          
+          <controller_action_layout_generate_blocks_after>
+            <observers>
               <segment_analyticsmore_category_view>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
@@ -126,6 +136,17 @@
               </segment_analyticsmore_catalog_product_collection_apply_limitations_after>
             </observers>                              
           </catalog_product_collection_apply_limitations_after>
+          
+          <controller_action_predispatch_catalog_product_gallery>
+            <observers>
+              <segment_analyticsmore_catalog_product_collection_apply_limitations_after>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>productGalleryViewed</method>
+              </segment_analyticsmore_catalog_product_collection_apply_limitations_after>
+            </observers>                                        
+          </controller_action_predispatch_catalog_product_gallery>
+          
           
           <controller_action_layout_generate_blocks_after>
             <observers>

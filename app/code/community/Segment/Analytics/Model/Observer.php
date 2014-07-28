@@ -222,7 +222,23 @@ class Segment_Analytics_Model_Observer
         );          
 
     }
+
+    public function viewedImageFrontendTrack($observer)
+    {
+        $action = $observer->getAction();
+        if(!$action){ return; } 
         
+        $layout = Mage::getSingleton('core/layout');
+        
+        $content = $layout->getBlock('content');
+        if(!$content) { return; }
+        
+        $content->append(
+            $layout->createBlock('core/template')
+            ->setTemplate('segment_analytics/image-frontend.phtml')
+        );
+    }
+    
     public function orderPlaced($observer)
     {
         $front      = Segment_Analytics_Model_Front_Controller::getInstance();            
