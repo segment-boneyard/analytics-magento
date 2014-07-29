@@ -30,7 +30,21 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         }
         return $names;        
     }
-    
+
+    /**
+    * Changes standard page titles per segment API.  Hopefully 
+    * this is kept to a minimum
+    * @todo refactor if this goes beyond page
+    */    
+    public function getNormalizedPageTitle($title)
+    {
+        if(strpos($title, $this->__('Search results for')) !== false)
+        {
+            $title = 'Search Results';
+        }
+        
+        return $title;
+    }
     
     public function getNormalizedProductInformation($product)
     {
@@ -64,7 +78,12 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             $product[$key] = (float) $product[$key];
         }
 
-        
+        //segments wants "id" not product_id
+        if(array_key_exists('product_id', $product))       
+        {
+            $product['id'] = $product['product_id'];
+            unset($product['product_id']);
+        }
         return $product;
     }
 }

@@ -20,6 +20,8 @@ class Segment_Analytics_Model_Controller_Page extends Segment_Analytics_Model_Co
         }
         
         $title = Mage::getSingleton('core/layout')->getBlock('head')->getTitle();
+        $title = Mage::helper('segment_analytics')->getNormalizedPageTitle($title);
+        
         $block->setPageName($title);
 
         return $block;
