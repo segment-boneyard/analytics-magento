@@ -24,7 +24,7 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
         ->setData(array(
             'library'=> array(
                 'name'=>'analytics-magento',
-                'version'=>'0.0.1'
+                'version'=>(string) Mage::getConfig()->getNode()->modules->Segment_Analytics->version
         )));       
         return $renderer->toJsonString();
     }
