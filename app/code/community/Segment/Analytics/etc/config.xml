@@ -109,6 +109,16 @@
           
           <controller_action_layout_generate_blocks_after>
             <observers>
+              <segment_analyticsmore_category_view_for_review_tab>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>addClickedReviewTabJavascript</method>
+              </segment_analyticsmore_category_view_for_review_tab>
+            </observers>                              
+          </controller_action_layout_generate_blocks_after>
+          
+          <controller_action_layout_generate_blocks_after>
+            <observers>
               <segment_analyticsmore_category_view_for_image_thumbs>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>

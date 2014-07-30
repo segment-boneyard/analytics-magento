@@ -260,6 +260,30 @@ class Segment_Analytics_Model_Observer
         Mage::Log($observer->getTransport()->getHtml(), Zend_Log::INFO, 'segment.log');
     }
     
+    
+    public function addClickedReviewTabJavascript($observer)
+    {
+        $action = $observer->getAction();
+        if(!$action){ return; }     
+        
+        if($action->getFullActionName() != 'catalog_product_view')
+        {
+            return;
+        }
+        
+        $layout = Mage::getSingleton('core/layout');
+
+        $content = $layout->getBlock('content');
+        if(!$content)
+        {
+            return;
+        }
+        $block = $layout->createBlock('segment_analytics/template')
+        ->setTemplate('segment_analytics/review-frontend.phtml');
+        
+        $content->append($block);
+    }
+    
     protected function _getCustomer()
     {
         $customer       = Mage::getSingleton('customer/session')->getCustomer();            

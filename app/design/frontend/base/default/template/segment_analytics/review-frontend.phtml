@@ -1,0 +1,29 @@
+<?php
+    //new RWD gives us no IDs to hook into 
+    $data = array();
+    echo $this->setReviewLabel(Mage::helper('core')->__('Reviews'))
+    ->renderDataAsJsonVar('segment_analytics_frontend_review');
+?>    
+<script type="text/javascript">    
+    if($j)
+    {
+        //rwd — jquery block prototype observe
+        var selector = '#collateral-tabs';
+        $j(selector).parent().click(function(e){
+            if( $j(e.target).html().indexOf(segment_analytics_frontend_review.review_label) === -1 )
+            {
+                return;
+            }
+            segment_analytics_trackreview(); 
+        });    
+        
+    }
+    
+    var segment_analytics_trackreview = function()
+    {
+            analytics.track("Viewed Product Reviews",
+            {'product': segment_analytics_viewedproduct.params},
+            <?php echo $this->getContextJson(); ?>);    
+
+    }
+</script>
