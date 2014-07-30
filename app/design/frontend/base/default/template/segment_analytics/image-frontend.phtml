@@ -15,7 +15,8 @@
                 
                 window.analytics.track('Viewed Product Image',
                     {'src':     target.src,
-                     'product': segment_analytics_viewedproduct.params}                     
+                     'product': segment_analytics_viewedproduct.params},
+                     <?php echo $this->getContextJson(); ?>
                 );
             });
         });    

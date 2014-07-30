@@ -234,7 +234,7 @@ class Segment_Analytics_Model_Observer
         if(!$content) { return; }
         
         $content->append(
-            $layout->createBlock('core/template')
+            $layout->createBlock('segment_analytics/template')
             ->setTemplate('segment_analytics/image-frontend.phtml')
         );
     }
