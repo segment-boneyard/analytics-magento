@@ -84,6 +84,27 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             $product['id'] = $product['product_id'];
             unset($product['product_id']);
         }
+        
+        $product = $this->getDataCastAsBooleans($product);
         return $product;
     }
+    
+    /**
+    * Central place for casting of '1' and '0' as boolean
+    * where we know it needs to happen. Segment API requirement
+    */    
+    public function getDataCastAsBooleans($data)
+    {
+        $keys_boolean = array('has_options','is_active','customer_is_guest','customer_note_notify',
+        'email_sent','forced_shipment_with_invoice','paypal_ipn_customer_notified','is_virtual',
+        'is_qty_decimal', 'no_discount','is_nominal');
+        foreach($keys_boolean as $key)
+        {
+            if(!array_key_exists($key, $data)) { continue; }
+            $data[$key] = (boolean) $data[$key];
+        }        
+        return $data;
+    }
+    
+    
 }
