@@ -69,4 +69,4 @@ After installing the extension, you may enter your Segment key at
 
     System -> Configuration -> Analytics
     
-If this page returns a 404 (common during a manual install) logout and log back in to clear your cached Magento session
+If this page returns a 404 (common during a manual install) logout and log back in to clear your cached Magento session.      
