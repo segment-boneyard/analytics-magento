@@ -15,7 +15,7 @@ class Segment_Analytics_Model_Controller_Page extends Segment_Analytics_Model_Co
         
         if($product)
         {
-            $block->setPageName($product->getName());
+            $block->setPageName('Product');
             return $block;
         }
         
