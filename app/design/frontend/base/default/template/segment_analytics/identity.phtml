@@ -6,7 +6,7 @@
     $json_to_send = Mage::helper('core')->jsonEncode($json_to_send);    
 ?>
 <script type="text/javascript">
-    analytics.identify(segment_analytics_identity.user_id, 
+    analytics.identify(<?php echo $this->getPropertyAsJavascriptString('user_id');?>, 
     <?php echo $json_to_send; ?>,
     <?php echo $this->getContextJson(); ?>);
     

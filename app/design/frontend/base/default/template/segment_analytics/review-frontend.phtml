@@ -22,7 +22,7 @@
     var segment_analytics_trackreview = function()
     {
             analytics.track("Viewed Product Reviews",
-            {'product': segment_analytics_viewedproduct.params},
+            {'product': <?php echo $this->renderDataAsJsonObject('params'); ?>},
             <?php echo $this->getContextJson(); ?>);    
 
     }

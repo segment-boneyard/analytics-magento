@@ -28,4 +28,16 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
         )));       
         return $renderer->toJsonString();
     }
+
+    /**
+    * Ensure safe JSON string, even for Magento systems still
+    * running on PHP 5.2
+    */    
+    public function getPropertyAsJavascriptString($prop)
+    {
+        $data = (string) $this->getData($prop);        
+        $data = json_encode($data);      
+        $data = preg_replace('%[^ "\'a-z>0-9_-]%six','',$data);        
+        return $data;
+    }
 }

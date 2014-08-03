@@ -4,10 +4,10 @@
 <script type="text/javascript">     
     if(segment_analytics_page.category_names)
     {
-        window.analytics.page(segment_analytics_page.full_category_name, segment_analytics_page.page_title,{},<?php echo $this->getContextJson(); ?>);        
+        window.analytics.page(<?php echo $this->getPropertyAsJavascriptString('full_category_name');?>, <?php echo $this->getPropertyAsJavascriptString('full_category_name');?>,{},<?php echo $this->getContextJson(); ?>);        
     }
     else
     {
-        window.analytics.page(segment_analytics_page.page_name,{},<?php echo $this->getContextJson(); ?>);
+        window.analytics.page(<?php echo $this->getPropertyAsJavascriptString('page_name');?>,{},<?php echo $this->getContextJson(); ?>);
     }    
 </script>

@@ -34,16 +34,17 @@ class Segment_Analytics_Model_Controller_Page extends Segment_Analytics_Model_Co
     
     protected function _getCategoryPageHandles()
     {
-        return array('catelog_category_view');
+        return array('catalog_category_view');
     }
 
     protected function _getCategoryNames()
     {        
+        
         if(!in_array($this->getFullActionName(), $this->_getCategoryPageHandles()))
         {
             return;
         } 
-
+        
         $current_category = Mage::registry('current_category');        
         $category   = $current_category;
         if(!$current_category)
