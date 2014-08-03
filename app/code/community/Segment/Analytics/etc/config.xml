@@ -139,11 +139,11 @@
           
           <controller_action_layout_generate_blocks_after>
             <observers>
-              <segment_analyticsmore_category_view>
+              <segment_analyticsmore_category_view_for_filtering>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>categoryViewForFiltering</method>
-              </segment_analyticsmore_category_view>
+              </segment_analyticsmore_category_view_for_filtering>
             </observers>                    
           </controller_action_layout_generate_blocks_after>
           
