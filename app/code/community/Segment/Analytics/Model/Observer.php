@@ -315,6 +315,7 @@ class Segment_Analytics_Model_Observer
         $full_customer = Mage::getModel('customer/customer')->getCollection()
         ->addAttributeToSelect('*')->addFieldToFilter('entity_id', $customer->getId())
         ->getFirstItem();
+                
         return $full_customer;
     }        
     
@@ -323,7 +324,8 @@ class Segment_Analytics_Model_Observer
         $customer = $this->_getCustomer();
         if($customer)
         {
-            return $customer->getData();
+            $customer = Mage::helper('segment_analytics')->getNormalizedCustomerInformation($customer->getData());
+            return $customer;
         }
         return array();
     }

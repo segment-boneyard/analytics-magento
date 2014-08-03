@@ -41,6 +41,9 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->unsetData('lastname')
         ->unsetData('middlename');
         
+        $data = $block->getData();        
+        $data = Mage::helper('segment_analytics')->getNormalizedCustomerInformation($data);
+        $block->setData($data);
         return $block;
     }
     

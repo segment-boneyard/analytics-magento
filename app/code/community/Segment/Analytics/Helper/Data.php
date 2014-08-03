@@ -46,6 +46,26 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         return $title;
     }
     
+    public function getNormalizedCustomerInformation($data)
+    {
+        $swap = array(
+            'firstname'=>'first_name',
+            'lastname'=>'last_name');
+            
+        foreach($swap as $old=>$new)
+        {
+            if(!array_key_exists($old, $data))
+            {
+                continue;
+            }            
+            $data[$new] = $data[$old];
+            unset($data[$old]);
+        }
+        
+        
+        return $data;
+    }
+    
     public function getNormalizedProductInformation($product)
     {
         //if passed id, load the product
