@@ -37,7 +37,7 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
     {
         $data = (string) $this->getData($prop);        
         $data = json_encode($data);      
-        $data = preg_replace('%[^ "\'a-z>0-9_-]%six','',$data);        
+        $data = preg_replace('%[^ $:"\'a-z>0-9_-]%six','',$data);        
         return $data;
     }
 }
