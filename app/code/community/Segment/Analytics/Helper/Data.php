@@ -61,9 +61,8 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             $data[$new] = $data[$old];
             unset($data[$old]);
         }
-        
-        
-        return $data;
+                
+        return $this->_normalizeDatesToISO8601($data);
     }
     
     public function getNormalizedProductInformation($product)
@@ -106,7 +105,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         }
         
         $product = $this->getDataCastAsBooleans($product);
-        return $product;
+        return $this->_normalizeDatesToISO8601($product);
     }
     
     /**
@@ -123,8 +122,25 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             if(!array_key_exists($key, $data)) { continue; }
             $data[$key] = (boolean) $data[$key];
         }        
+        return $this->_normalizeDatesToISO8601($data);
+    }
+    
+    protected function _normalizeDatesToISO8601($data)
+    {
+        $date_fields = array('created_at', 'updated_at');
+        foreach($date_fields as $key)
+        {
+            if(!array_key_exists($key, $data))
+            {
+                continue;
+            }
+            $data[$key] = date(DATE_ISO8601,strToTime($data['key']));
+        }
         return $data;
     }
     
-    
+    public function normalizeReviewwData($data)
+    {
+        return $this->_normalizeDatesToISO8601($data);
+    }    
 }
