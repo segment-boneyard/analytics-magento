@@ -149,11 +149,11 @@
 
           <controller_action_layout_generate_blocks_after>
             <observers>
-              <segment_analyticsmore_category_view_for_filtering>
+              <segment_analyticsmore_category_view_for_welcome>
                 <type>singleton</type>
                 <class>segment_analytics/observer_admin</class>
                 <method>addExplainationTextToConfigScreen</method>
-              </segment_analyticsmore_category_view_for_filtering>
+              </segment_analyticsmore_category_view_for_welcome>
             </observers>                    
           </controller_action_layout_generate_blocks_after>
           
