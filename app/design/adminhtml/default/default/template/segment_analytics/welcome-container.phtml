@@ -1,0 +1,6 @@
+<script type="text/javascript">
+    var segment_analytics_intro = <?php echo $this->getContentJson();?>;
+    document.observe('dom:loaded', function(){
+        $('config_edit_form').innerHTML = segment_analytics_intro.content + $('config_edit_form').innerHTML;
+    });
+</script>

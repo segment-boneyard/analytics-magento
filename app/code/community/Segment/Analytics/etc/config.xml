@@ -146,6 +146,16 @@
               </segment_analyticsmore_category_view_for_filtering>
             </observers>                    
           </controller_action_layout_generate_blocks_after>
+
+          <controller_action_layout_generate_blocks_after>
+            <observers>
+              <segment_analyticsmore_category_view_for_filtering>
+                <type>singleton</type>
+                <class>segment_analytics/observer_admin</class>
+                <method>addExplainationTextToConfigScreen</method>
+              </segment_analyticsmore_category_view_for_filtering>
+            </observers>                    
+          </controller_action_layout_generate_blocks_after>
           
           <catalog_product_collection_apply_limitations_after>
             <observers>
