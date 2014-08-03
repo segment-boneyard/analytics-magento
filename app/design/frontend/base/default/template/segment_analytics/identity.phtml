@@ -1,5 +1,5 @@
 <?php
-    echo $this->renderDataAsJsonVar('segment_analytics_identity');
+    //echo $this->renderDataAsJsonVar('segment_analytics_identity');
     $json_to_send = Mage::helper('core')->jsonDecode($this->renderDataAsJsonObject());
     unset($json_to_send['key']);
     unset($json_to_send['user_id']);

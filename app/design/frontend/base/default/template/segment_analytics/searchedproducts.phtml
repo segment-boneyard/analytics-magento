@@ -1,6 +1,4 @@
-<?php
-    echo $this->renderDataAsJsonVar('segment_analytics_searched');
-?>
+<?php //echo $this->renderDataAsJsonVar('segment_analytics_searched'); ?>
 <script type="text/javascript">
     analytics.track('Searched Products',{
         'query':<?php echo $this->getPropertyAsJavascriptString('query');?>
