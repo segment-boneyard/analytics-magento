@@ -106,6 +106,16 @@
               </segment_analyticsmore_customer_register_success>
             </observers>          
           </customer_register_success>
+
+          <controller_action_layout_generate_blocks_after>
+            <observers>
+              <segment_analyticsmore_category_view_for_share_tab>
+                <type>singleton</type>
+                <class>segment_analytics/observer</class>
+                <method>addClickedShareJavascript</method>
+              </segment_analyticsmore_category_view_for_share_tab>
+            </observers>                              
+          </controller_action_layout_generate_blocks_after>
           
           <controller_action_layout_generate_blocks_after>
             <observers>

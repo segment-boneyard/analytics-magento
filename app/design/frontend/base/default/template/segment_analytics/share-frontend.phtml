@@ -1,0 +1,25 @@
+<script type="text/javascript">
+document.observe('dom:loaded',function(){
+    var shared_product = function(network)
+    {
+        analytics.track("Shared Product",
+        {'product': segment_analytics_viewedproduct.params,
+         'network':network},
+        <?php echo $this->getContextJson(); ?>);            
+    }
+    
+    var shared_product_facebook = function()
+    {
+        shared_product('Facebook');
+    }
+    
+    var shared_product_twitter = function()
+    {
+        shared_product('Twitter');
+    }
+    
+    $($$('a.link-facebook')[0]).observe('click', shared_product_facebook);
+    $($$('a.link-twitter')[0]).observe('click', shared_product_twitter);
+})
+
+</script>
