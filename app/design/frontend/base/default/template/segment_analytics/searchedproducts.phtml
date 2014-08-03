@@ -3,7 +3,7 @@
 ?>
 <script type="text/javascript">
     analytics.track('Searched Products',{
-        'query':<?php echo $this->getPropertyAsJavascriptString('query_text');?>
+        'query':<?php echo $this->getPropertyAsJavascriptString('query');?>
     },
     <?php echo $this->getContextJson(); ?>  );
 </script>
