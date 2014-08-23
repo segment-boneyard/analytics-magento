@@ -21,7 +21,7 @@ If you run into issues, be sure to check out the [documentation](https://segment
 
 ## Developing
 
-_Note: this section only applies if you are interested in contributing improvements to our Magento extension's source code. You don't need to read this if you're just looking to use the extension in your own store._
+_Note: this section only applies if you are interested in contributing improvements to our Magento extension's source code. You don't need to read this to use the extension in your own store._
 
 TODO: We don't yet have detailed instructions for installing a local development version of Magento.
 
@@ -30,7 +30,7 @@ TODO: We don't yet have detailed instructions for installing a local development
 
 _Note: this section only applies to Segment teammates, and details how we deploy new versions of the extension to the Magento Connect marketplace for end users of the extension to download._
 
-Before deploying, always make sure you've pulled in the latest changes from the remote repository with:
+Before deploying, make sure to pull in the latest changes from the remote repository:
 
     $ git pull origin master
 
@@ -38,13 +38,11 @@ The first step after making your changes to the extension source is to tag a new
 
 Then, update [`History.md`](History.md) with a summary of your changes.
 
-Once you've bumped the version and added to the changelog, build the new distribution files by running:
+Once you've bumped the version and updated the changelog, you need to rebuild the distribution files in [`dist/`](dist/) by running the build script:
 
     $ bin/build
 
-That will update the files in `./dist` to the latest version.
-
-Then commit all of those changes, and tag the new release like so (where `X.X.X` is the number of the newest version):
+Then commit those changes, and tag the release (where `X.X.X` is the number of the newest version):
 
     $ git commit -am 'X.X.X'
     $ git tag 'X.X.X'
@@ -57,7 +55,7 @@ Fill out the form for adding a new version, supplying the `X.X.X` version number
 
 On the upload form page click **Choose File** and find the `analytics-magento-X.X.X` file on your computer from the [`dist/`](dist) directory, then hit **Upload and save**. 
 
-That should successfully add the version to the extension on Magento Connect, and you're finally done!
+And you're finally done!
 
 
 ## Resources
