@@ -21,7 +21,7 @@ tar -cf tmp.tar ./app
 #
 
 echo "Rebundling the package in a Magento-compatible format..."
-php ./support/MagentoTarToConnect/magento-tar-to-connect.php ./config.php
+php ./support/MagentoTarToConnect/magento-tar-to-connect.php ./support/config.php
 rm tmp.tar
 
 #
@@ -39,7 +39,10 @@ fi
 
 #
 # Done!
+#
 
 echo
 echo "Built for Magento Connect!"
+echo "The new distribution files are located in ./dist"
 echo
+exit 0
