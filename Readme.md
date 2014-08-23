@@ -61,7 +61,7 @@ And you're finally done!
 ## Resources
 
 - [Analytics for Magento Listing](http://www.magentocommerce.com/magento-connect/extension-171.html) - Our extension's listing on Magento Connect.
-- [Magento Tar to Connect](http://alanstorm.com/magento_connect_from_tar) - The script we use to build Magento Connect compatible distribution files.
+- [Magento Tar to Connect](http://alanstorm.com/magento_connect_from_tar) - The script we use to build Magento Connect compatible files.
 - [Magento Extension Design Guidelines](http://info.magento.com/rs/magentocommerce/images/0448_Connect_DevStyleguide_v6.pdf?mkt_tok=3RkMMJWWfF9wsRokvK7BZKXonjHpfsX94%2B0oWKSg38431UFwdcjKPmjr1YEGTcZ0dvycMRAVFZl5nQFZHeWbaI9D9fhQDlOxXQ%3D%3D) - Guidelines for extensions to adhere to. 
 
 
