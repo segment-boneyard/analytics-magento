@@ -134,7 +134,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             {
                 continue;
             }
-            $data[$key] = date(DATE_ISO8601,strToTime($data['key']));
+            $data[$key] = date(DATE_ISO8601,strToTime($data[$key]));
         }
         return $data;
     }

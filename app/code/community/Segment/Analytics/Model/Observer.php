@@ -225,6 +225,11 @@ class Segment_Analytics_Model_Observer
 
     public function viewedImageFrontendTrack($observer)
     {
+        if(!Mage::helper('segment_analytics')->isEnabled())
+        {
+            return;
+        }        
+        
         $action = $observer->getAction();
         if(!$action){ return; } 
         
