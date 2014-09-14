@@ -27,12 +27,12 @@ class Segment_Analytics_Model_Observer_Admin
         ->setTemplate('segment_analytics/welcome.phtml')
         ->toHtml();
         
-        $json = Mage::helper('core')->jsonEncode($json);
-        $block = $layout->createBlock('adminhtml/template')
-        ->setTemplate('segment_analytics/welcome-container.phtml')
-        ->setContentJson($json);
+//         $json = Mage::helper('core')->jsonEncode($json);
+//         $block = $layout->createBlock('adminhtml/template')
+//         ->setTemplate('segment_analytics/welcome-container.phtml')
+//         ->setContentJson($json);
         
-        $content->append($block);
+//         $content->append($block);
         
         // var_dump($content);
 //         exit;

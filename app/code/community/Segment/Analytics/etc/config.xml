@@ -327,4 +327,23 @@
 			</segment_analytics>
 		</helpers>
 	</global>
+	
+	<default>
+	    <segment_analytics>
+	        <options>
+	            <customer_traits>
+created_at
+email
+first_name'
+last_name
+middle_name
+name
+is_active
+updated_at
+total_orders
+total_spent	            
+</customer_traits>
+	        </options>
+	    </segment_analytics>
+	</default>
 </config>
