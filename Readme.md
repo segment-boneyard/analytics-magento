@@ -1,7 +1,7 @@
 
 # Analytics for Magento
 
-**Analytics for Magento** is a Magento extension for [Segment](https://segment.io) that lets you send data to any analytics tool you want without writing any code yourself!
+**Analytics for Magento** is a Magento extension for [Segment](https://segment.com) that lets you send data to any analytics tool you want without writing any code yourself!
 
 - [Installing](#installing)
 - [Support](#support)
@@ -11,12 +11,12 @@
 
 ## Installing
 
-To get up and running, check out our documentation at [https://segment.io/plugins/magento](https://segment.io/plugins/magento). Installation takes less than five minutes!
+To get up and running, check out our documentation at [https://segment.com/plugins/magento](https://segment.com/plugins/magento). Installation takes less than five minutes!
 
 
 ## Support
 
-If you run into issues, be sure to check out the [documentation](https://segment.io/plugins/magento), and you can always reach out to our [support team](https://segment.io/support) for help!
+If you run into issues, be sure to check out the [documentation](https://segment.com/plugins/magento), and you can always reach out to our [support team](https://segment.com/support) for help!
 
 
 ## Developing
@@ -67,7 +67,7 @@ And you're finally done!
 
 ## License
 
-Copyright &copy; 2014 Segment &lt;friends@segment.io&gt;
+Copyright &copy; 2014 Segment &lt;friends@segment.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
