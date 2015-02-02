@@ -1,0 +1,27 @@
+{
+    "name": "segmentio/analytics-magento",
+    "description": "Segment Analytics Magento Plugin",
+    "type": "magento-module",
+    "license": "MIT",
+    "homepage": "https://segment.com/docs/platforms/magento/",
+    "authors": [
+        {
+            "name": "Segment",
+            "email": "support@segment.com",
+            "homepage": "https://segment.com/"
+        },
+        {
+            "name": "Ian Storm Taylor",
+            "homepage": "http://ianstormtaylor.com/"
+        }
+    ],
+    "support": {
+        "email": "support@segment.com",
+        "issues": "https://github.com/segmentio/analytics-magento/issues",
+        "source": "https://github.com/segmentio/analytics-magento"
+    },
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
+
