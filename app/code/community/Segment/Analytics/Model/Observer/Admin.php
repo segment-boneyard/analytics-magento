@@ -34,7 +34,5 @@ class Segment_Analytics_Model_Observer_Admin
         
 //         $content->append($block);
         
-        // var_dump($content);
-//         exit;
     }
 }

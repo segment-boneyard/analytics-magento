@@ -30,7 +30,6 @@ class Segment_Analytics_Model_Observer
         $before_body_end->append($container);
         $front = Segment_Analytics_Model_Front_Controller::getInstance();           
         $blocks = $front->getBlocks();
-        // var_dump($blocks);
         foreach($blocks as $block)
         {
             if(!$block) { continue; }
