@@ -78,8 +78,6 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
                 
         $data_final = $this->getDataCastAsBooleans($data_final);
         
-        var_dump($data_final);
-        exit;
         return $data_final;
         
     }
