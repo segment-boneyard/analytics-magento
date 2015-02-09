@@ -20,7 +20,7 @@ class Segment_Analytics_Model_Front_Controller
         
     public function addDeferredAction($action, $action_data=array())
     {
-        Mage::Log("Adding Deferred Action $action");
+        #Mage::Log("Adding Deferred Action $action");
         
         $o_action = new stdClass;
         $o_action->action = $action;
@@ -40,7 +40,7 @@ class Segment_Analytics_Model_Front_Controller
         Mage::getSingleton('segment_analytics/session')
         ->setDeferredActions(array())
         ->setDeferredActionsData(array());
-        Mage::Log("Cleared Deferred Action");
+        #Mage::Log("Cleared Deferred Action");
         return $this;
     }
     
