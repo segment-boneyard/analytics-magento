@@ -78,8 +78,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
                 
         $data_final = $this->getDataCastAsBooleans($data_final);
         
-        var_dump($data_final);
-        exit;
+
         return $data_final;
         
     }
@@ -102,7 +101,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         //ensure category names/labels are sent along
         $categories = Mage::getModel('catalog/category')->getCollection()
         ->addAttributeToSelect('name')
-        ->addFieldToFilter('entity_id', array('in'=>$product['category_ids']));    
+        ->addFieldToFilter('entity_id', array('in'=>$product['categories']));
         foreach($categories as $category)
         {
             $product['categories'][] = $category->getName();            
