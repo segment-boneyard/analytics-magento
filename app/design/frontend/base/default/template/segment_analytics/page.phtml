@@ -1,11 +1,11 @@
 <?php echo $this->renderDataAsJsonVar('segment_analytics_page');?>
-<script type="text/javascript">     
+<script type="text/javascript">
     if(segment_analytics_page.category_names)
     {
-        window.analytics.page(<?php echo $this->getPropertyAsJavascriptString('full_category_name');?>, <?php echo $this->getPropertyAsJavascriptString('full_category_name');?>,{},<?php echo $this->getContextJson(); ?>);        
+        window.analytics.page(<?php echo $this->getPropertyAsJavascriptString('full_category_name');?>, <?php echo $this->getPropertyAsJavascriptString('page_name');?>,{},<?php echo $this->getContextJson(); ?>);
     }
     else
     {
         window.analytics.page(<?php echo $this->getPropertyAsJavascriptString('page_name');?>,{},<?php echo $this->getContextJson(); ?>);
-    }    
+    }
 </script>
