@@ -8,7 +8,7 @@ return array(
 
 //The Magento Connect extension name.  Must be unique on Magento Connect
 //Has no relation to your code module name.  Will be the Connect extension name
-'extension_name' => 'analytics-magento',
+'extension_name' => 'analytics',
 
 //Your extension version.  By default, if you're creating an extension from a
 //single Magento module, the tar-to-connect script will look to make sure this
