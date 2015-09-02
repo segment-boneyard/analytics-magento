@@ -1,17 +1,19 @@
 <?php
     //echo $this->renderDataAsJsonVar('segment_analytics_identity');
+
     $json_to_send = Mage::helper('core')->jsonDecode($this->renderDataAsJsonObject());
     unset($json_to_send['key']);
     unset($json_to_send['user_id']);
+
     if(array_key_exists('gender', $json_to_send) && $json_to_send['gender'] === false)
     {
         unset($json_to_send['gender']);
     }
-    $json_to_send = Mage::helper('core')->jsonEncode($json_to_send);    
+    $json_to_send = Mage::helper('core')->jsonEncode($json_to_send);
 ?>
 <script type="text/javascript">
-    analytics.identify(<?php echo $this->getPropertyAsJavascriptString('user_id');?>, 
+    analytics.identify(<?php echo $this->getPropertyAsJavascriptString('user_id');?>,
     <?php echo $json_to_send; ?>,
     <?php echo $this->getContextJson(); ?>);
-    
+
 </script>

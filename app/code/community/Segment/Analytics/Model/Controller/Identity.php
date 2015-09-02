@@ -2,7 +2,7 @@
 class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Model_Controller_Base
 {
     public function getBlock($block)
-    {        
+    {
         $customer = $this->_getCustomer();
 
         if(!$customer->getId())
@@ -14,7 +14,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->getAttribute('gender')
         ->getSource()
         ->getOptionText($customer->getData('gender'));
-        
+
         $address    = Mage::getModel('customer/address')->load(
             $customer->getDefaultBilling()
         );
@@ -23,7 +23,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->addData($customer->getData())
         ->setFullName($customer->getName())
         ->setName($customer->getName())
-        ->setEmail($customer->getEmail())        
+        ->setEmail($customer->getEmail())
         ->setGroupId($customer->getGroupId())
         ->setTaxClassId($customer->getTaxClassId())
         ->setSharedStoreIds((array)$customer->getSharedStoreIds())
@@ -31,7 +31,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->setGender($gender_label)
         ->setFirstName($customer->getFirstname())
         ->setLastName($customer->getLastname())
-        ->setMiddleName($customer->getMiddlename())        
+        ->setMiddleName($customer->getMiddlename())
         ->setTotalOrders(
             Mage::getSingleton('segment_analytics/query_totalpurchased')
             ->fetchTotalOrders($customer->getId())
@@ -44,7 +44,7 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
         ->unsetData('firstname')
         ->unsetData('lastname')
         ->unsetData('middlename');
-        
+
         if($address)
         {
             $region = Mage::getModel('directory/region')->load($address->getRegionId());
@@ -57,10 +57,10 @@ class Segment_Analytics_Model_Controller_Identity extends Segment_Analytics_Mode
             ->setData('state',      $region->getCode())
             ->setData('street',     $street);
         }
-        $data = $block->getData();        
+        $data = $block->getData();
         $data = Mage::helper('segment_analytics')->getNormalizedCustomerInformation($data);
         $block->setData($data);
         return $block;
     }
-    
+
 }
