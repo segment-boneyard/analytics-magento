@@ -61,6 +61,7 @@ class Segment_Analytics_Model_Observer
 
         $front = Segment_Analytics_Model_Front_Controller::getInstance();
         $front->addAction('init');
+        $front->addDeferredAction('identity');
         $front->addAction('page');
     }
 
@@ -85,7 +86,7 @@ class Segment_Analytics_Model_Observer
         $product = $observer->getProduct();
         $front = Segment_Analytics_Model_Front_Controller::getInstance();
         $front->addDeferredAction('addtocart',
-            array('sku'=>$product->getSku())
+            array('product'=>$product)
         );
     }
 
@@ -94,7 +95,7 @@ class Segment_Analytics_Model_Observer
         $product    = $observer->getQuoteItem()->getProduct();
         $front      = Segment_Analytics_Model_Front_Controller::getInstance();
         $front->addDeferredAction('removefromcart',
-            array('sku'=>$product->getSku())
+            array('product'=>$product)
         );
     }
 

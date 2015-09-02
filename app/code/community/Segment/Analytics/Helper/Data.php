@@ -6,6 +6,11 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig('segment_analytics/options/write_key');
     }
 
+    public function flushAfterLogout()
+    {
+        return Mage::getStoreConfig('segment_analytics/options/logout_flush');
+    }
+
     public function isAdmin()
     {
         return Mage::app()->getStore()->isAdmin();
@@ -121,7 +126,19 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             unset($product['product_id']);
         }
 
+        $blacklist = trim(Mage::getStoreConfig('segment_analytics/options/product_properties'));
+        $blacklistedFields = preg_split('%[\n\r]%', $blacklist, -1, PREG_SPLIT_NO_EMPTY);
+
+        foreach($blacklistedFields as $key)
+        {
+            if(!array_key_exists($key, $product)) { continue; }
+            unset($product[$key]);
+        }
+
         $product = $this->getDataCastAsBooleans($product);
+        $product = array_filter($product, function($v, $k) {
+            return !is_null($v);
+        });
         return $this->_normalizeDatesToISO8601($product);
     }
 

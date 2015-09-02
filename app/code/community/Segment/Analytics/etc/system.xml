@@ -7,7 +7,7 @@
             <sort_order>101</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
-            <show_in_store>1</show_in_store>		
+            <show_in_store>1</show_in_store>
             <groups>
 				<options>
                     <label>Segment</label>
@@ -15,7 +15,7 @@
                     <sort_order>9999</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>				
+                    <show_in_store>1</show_in_store>
                     <fields>
 						<write_key>
 							<!-- http://alanstorm.com/magento_system_configuration_in_depth_tutorial -->
@@ -27,8 +27,18 @@
                             <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                    
-						</write_key>	
+                            <show_in_store>1</show_in_store>
+						</write_key>
+                        <logout_flush>
+                            <label>Flush Analytics Cache on Customer Logout</label>
+                            <comment>Flushing will ensure you don't misattribute events to a logged-out user. You may opt not to flush if you want to continue tracking users by ID after they logout. Click <a href="https://segment.com/docs/libraries/analytics.js/#reset-logout">here</a> for more info.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logout_flush>
 						<customer_traits>
 						    <label>Customer Traits</label>
 						    <comment>Which Magento Customer Data Fields to Send</comment>
@@ -36,10 +46,19 @@
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                             
+                            <show_in_store>1</show_in_store>
 						</customer_traits>
+                        <product_properties>
+                            <label>Product Properties Blacklist</label>
+                            <comment>Which Magento Product Data Fields would you like to blacklist from properties of your calls?</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_properties>
 					</fields>
-				</options>				
+				</options>
 			</groups>
 		</segment_analytics>
 	</sections>

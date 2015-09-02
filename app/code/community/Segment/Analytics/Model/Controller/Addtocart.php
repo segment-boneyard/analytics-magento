@@ -3,6 +3,13 @@ class Segment_Analytics_Model_Controller_Addtocart extends Segment_Analytics_Mod
 {
     public function getBlock($block)
     {
+        $product = $block->getProduct();
+
+        $product   = Mage::helper('segment_analytics')
+        ->getNormalizedProductInformation($product);
+
+        $block->setProduct($product);
+
         return $block;
     }
 }

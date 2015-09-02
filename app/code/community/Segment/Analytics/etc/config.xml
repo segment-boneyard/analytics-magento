@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Segment_Analytics>
-			<version>1.1.0</version>
+			<version>2.0.0</version>
 		</Segment_Analytics>
 	</modules>
 	<frontend>
@@ -17,13 +17,13 @@
 		</routers>
 	</frontend>
 	<global>
-	    <resources>         
+	    <resources>
             <segment_analytics_setup>
                 <setup>
                     <module>Segment_Analytics</module>
                     <class>Segment_Analytics_Model_Resource_Setup</class>
                 </setup>
-            </segment_analytics_setup>	    
+            </segment_analytics_setup>
 	    </resources>
         <events>
 
@@ -35,7 +35,7 @@
                 <method>addFrotnendScripts</method>
               </segment_analyticsmore_scripts_addfrontend>
             </observers>
-          </controller_action_layout_generate_blocks_after>          
+          </controller_action_layout_generate_blocks_after>
 
           <customer_login>
             <observers>
@@ -43,7 +43,7 @@
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>loggedIn</method>
-              </segment_analyticsmore_scripts>            
+              </segment_analyticsmore_scripts>
             </observers>
           </customer_login>
 
@@ -53,30 +53,30 @@
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>loggedOut</method>
-              </segment_analyticsmore_scripts>            
+              </segment_analyticsmore_scripts>
             </observers>
           </customer_logout>
-          
+
           <checkout_cart_add_product_complete>
             <observers>
               <segment_analyticsmore_scripts>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>addToCart</method>
-              </segment_analyticsmore_scripts>            
-            </observers>          
+              </segment_analyticsmore_scripts>
+            </observers>
           </checkout_cart_add_product_complete>
-          
+
           <sales_quote_remove_item>
             <observers>
               <segment_analyticsmore_scripts_remove_item>
                 <type>singleton</type>
                 <class>segment_analytics/observer</class>
                 <method>removeFromCart</method>
-              </segment_analyticsmore_scripts_remove_item>            
-            </observers>                    
+              </segment_analyticsmore_scripts_remove_item>
+            </observers>
           </sales_quote_remove_item>
-          
+
           <controller_action_layout_render_before>
             <observers>
               <segment_analyticsmore_blocks>
@@ -86,7 +86,7 @@
               </segment_analyticsmore_blocks>
             </observers>
           </controller_action_layout_render_before>
-          
+
           <catalogsearch_query_load_after>
             <observers>
               <segment_analyticsmore_search>
@@ -94,7 +94,7 @@
                 <class>segment_analytics/observer</class>
                 <method>loadedSearch</method>
               </segment_analyticsmore_search>
-            </observers>          
+            </observers>
           </catalogsearch_query_load_after>
 
           <customer_register_success>
@@ -104,7 +104,7 @@
                 <class>segment_analytics/observer</class>
                 <method>customerRegistered</method>
               </segment_analyticsmore_customer_register_success>
-            </observers>          
+            </observers>
           </customer_register_success>
 
           <controller_action_layout_generate_blocks_after>
@@ -114,9 +114,9 @@
                 <class>segment_analytics/observer</class>
                 <method>addClickedShareJavascript</method>
               </segment_analyticsmore_category_view_for_share_tab>
-            </observers>                              
+            </observers>
           </controller_action_layout_generate_blocks_after>
-          
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_category_view_for_review_tab>
@@ -124,9 +124,9 @@
                 <class>segment_analytics/observer</class>
                 <method>addClickedReviewTabJavascript</method>
               </segment_analyticsmore_category_view_for_review_tab>
-            </observers>                              
+            </observers>
           </controller_action_layout_generate_blocks_after>
-          
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_category_view_for_image_thumbs>
@@ -134,9 +134,9 @@
                 <class>segment_analytics/observer</class>
                 <method>viewedImageFrontendTrack</method>
               </segment_analyticsmore_category_view_for_image_thumbs>
-            </observers>                              
+            </observers>
           </controller_action_layout_generate_blocks_after>
-          
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_category_view_for_filtering>
@@ -144,7 +144,7 @@
                 <class>segment_analytics/observer</class>
                 <method>categoryViewForFiltering</method>
               </segment_analyticsmore_category_view_for_filtering>
-            </observers>                    
+            </observers>
           </controller_action_layout_generate_blocks_after>
 
           <controller_action_layout_generate_blocks_after>
@@ -154,9 +154,9 @@
                 <class>segment_analytics/observer_admin</class>
                 <method>addExplainationTextToConfigScreen</method>
               </segment_analyticsmore_category_view_for_welcome>
-            </observers>                    
+            </observers>
           </controller_action_layout_generate_blocks_after>
-          
+
           <catalog_product_collection_apply_limitations_after>
             <observers>
               <segment_analyticsmore_catalog_product_collection_apply_limitations_after>
@@ -164,9 +164,9 @@
                 <class>segment_analytics/observer_layered</class>
                 <method>flagIsFiltered</method>
               </segment_analyticsmore_catalog_product_collection_apply_limitations_after>
-            </observers>                              
+            </observers>
           </catalog_product_collection_apply_limitations_after>
-          
+
           <controller_action_predispatch_catalog_product_gallery>
             <observers>
               <segment_analyticsmore_catalog_product_collection_apply_limitations_after>
@@ -174,10 +174,10 @@
                 <class>segment_analytics/observer</class>
                 <method>productGalleryViewed</method>
               </segment_analyticsmore_catalog_product_collection_apply_limitations_after>
-            </observers>                                        
+            </observers>
           </controller_action_predispatch_catalog_product_gallery>
-          
-          
+
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_category_view>
@@ -185,9 +185,9 @@
                 <class>segment_analytics/observer_layered</class>
                 <method>addLayeredLimitation</method>
               </segment_analyticsmore_category_view>
-            </observers>                    
-          </controller_action_layout_generate_blocks_after>                    
-          
+            </observers>
+          </controller_action_layout_generate_blocks_after>
+
           <controller_action_layout_generate_blocks_after>
             <observers>
               <segment_analyticsmore_review_view>
@@ -195,7 +195,7 @@
                 <class>segment_analytics/observer</class>
                 <method>reviewView</method>
               </segment_analyticsmore_review_view>
-            </observers>                    
+            </observers>
           </controller_action_layout_generate_blocks_after>
 
           <controller_action_layout_generate_blocks_after>
@@ -205,9 +205,9 @@
                 <class>segment_analytics/observer</class>
                 <method>productView</method>
               </segment_analyticsmore_product_view>
-            </observers>                    
-          </controller_action_layout_generate_blocks_after>          
-          
+            </observers>
+          </controller_action_layout_generate_blocks_after>
+
           <core_abstract_save_after>
             <observers>
               <segment_analyticsmore_amasty_fav_save_after>
@@ -215,9 +215,9 @@
                 <class>segment_analytics/observer</class>
                 <method>favSaved</method>
               </segment_analyticsmore_amasty_fav_save_after>
-            </observers>                        
+            </observers>
           </core_abstract_save_after>
-          
+
           <review_save_after>
             <observers>
               <segment_analyticsmore_review_save_after>
@@ -225,9 +225,9 @@
                 <class>segment_analytics/observer_review</class>
                 <method>markReviewSaved</method>
               </segment_analyticsmore_review_save_after>
-            </observers>              
+            </observers>
           </review_save_after>
-          
+
           <controller_action_postdispatch_review_product_post>
             <observers>
               <segment_analyticsmore_review_product_post>
@@ -235,9 +235,9 @@
                 <class>segment_analytics/observer_review</class>
                 <method>reviewedProduct</method>
               </segment_analyticsmore_review_product_post>
-            </observers>                 
+            </observers>
           </controller_action_postdispatch_review_product_post>
-          
+
           <newsletter_subscriber_save_after>
             <observers>
               <segment_analyticsmore_newsletter_save_after>
@@ -245,9 +245,9 @@
                 <class>segment_analytics/observer</class>
                 <method>newsletterSubscriber</method>
               </segment_analyticsmore_newsletter_save_after>
-            </observers>                           
+            </observers>
           </newsletter_subscriber_save_after>
-          
+
           <wishlist_add_product>
             <observers>
               <segment_analyticsmore_wishlist_add>
@@ -255,9 +255,9 @@
                 <class>segment_analytics/observer</class>
                 <method>wishlistAddProduct</method>
               </segment_analyticsmore_wishlist_add>
-            </observers>                   
+            </observers>
           </wishlist_add_product>
-          
+
           <sales_order_place_after>
             <observers>
               <segment_analyticsmore_sales_order_place_after>
@@ -265,9 +265,9 @@
                 <class>segment_analytics/observer</class>
                 <method>orderPlaced</method>
               </segment_analyticsmore_sales_order_place_after>
-            </observers>                      
+            </observers>
           </sales_order_place_after>
-          
+
           <core_block_abstract_to_html_after>
             <observers>
               <segment_analyticsmore_sales_logger>
@@ -275,42 +275,11 @@
                 <class>segment_analytics/observer</class>
                 <method>logBlockHtml</method>
               </segment_analyticsmore_sales_logger>
-            </observers>                                
+            </observers>
           </core_block_abstract_to_html_after>
 
-          <controller_action_predispatch_customer_account_logout>
-            <observers>
-              <segment_analyticsmore_sales_logger>
-                <type>singleton</type>
-                <class>segment_analytics/observer_customer</class>
-                <method>grabCustomerId</method>
-              </segment_analyticsmore_sales_logger>
-            </observers>                                          
-          </controller_action_predispatch_customer_account_logout>
-          
-          <controller_action_postdispatch_customer_account_logout>
-            <observers>
-              <segment_analyticsmore_sales_logger>
-                <type>singleton</type>
-                <class>segment_analytics/observer_customer</class>
-                <method>addCustomerIdParamater</method>
-              </segment_analyticsmore_sales_logger>
-            </observers>                                          
-          </controller_action_postdispatch_customer_account_logout>
-          
-          <controller_action_layout_generate_blocks_after>
-            <observers>
-              <segment_analyticsmore_sales_logger>
-                <type>singleton</type>
-                <class>segment_analytics/observer_customer</class>
-                <method>addCustomerTrackingIfIdPresent</method>
-              </segment_analyticsmore_sales_logger>
-            </observers>                                          
-          </controller_action_layout_generate_blocks_after>
-          
-        
         </events>
-	
+
 		<blocks>
 			<segment_analytics>
 				<class>Segment_Analytics_Block</class>
@@ -327,23 +296,40 @@
 			</segment_analytics>
 		</helpers>
 	</global>
-	
+
 	<default>
 	    <segment_analytics>
 	        <options>
 	            <customer_traits>
 created_at
+user_id
 email
-first_name'
+first_name
 last_name
 middle_name
 name
 is_active
 updated_at
 total_orders
-total_spent	            
+total_spent
 </customer_traits>
 	        </options>
 	    </segment_analytics>
+
+      <segment_analytics>
+          <options>
+              <product_properties>
+</product_properties>
+          </options>
+      </segment_analytics>
+      <segment_analytics>
+          <options>
+              <logout_flush>
+                0
+              </logout_flush>
+          </options>
+      </segment_analytics>
 	</default>
+
+
 </config>
