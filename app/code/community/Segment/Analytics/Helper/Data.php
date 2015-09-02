@@ -6,6 +6,11 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig('segment_analytics/options/write_key');
     }
 
+    public function flushAfterLogout()
+    {
+        return Mage::getStoreConfig('segment_analytics/options/logout_flush');
+    }
+
     public function isAdmin()
     {
         return Mage::app()->getStore()->isAdmin();

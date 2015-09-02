@@ -322,6 +322,13 @@ total_spent
 </product_properties>
           </options>
       </segment_analytics>
+      <segment_analytics>
+          <options>
+              <logout_flush>
+                0
+              </logout_flush>
+          </options>
+      </segment_analytics>
 	</default>
 
 
