@@ -1,3 +1,7 @@
+2.0.1 / 2015-09-17
+==================
+* Identified and fixed bug affecting added/removed product behavior
+
 2.0.0 / 2015-09-01
 ==================
 
