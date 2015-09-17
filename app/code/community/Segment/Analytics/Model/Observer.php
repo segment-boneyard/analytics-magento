@@ -86,7 +86,7 @@ class Segment_Analytics_Model_Observer
         $product = $observer->getProduct();
         $front = Segment_Analytics_Model_Front_Controller::getInstance();
         $front->addDeferredAction('addtocart',
-            array('product'=>$product)
+            array('params'=>array('product_id'=>$product->getId()))
         );
     }
 
@@ -95,7 +95,7 @@ class Segment_Analytics_Model_Observer
         $product    = $observer->getQuoteItem()->getProduct();
         $front      = Segment_Analytics_Model_Front_Controller::getInstance();
         $front->addDeferredAction('removefromcart',
-            array('product'=>$product)
+            array('params'=>array('product_id'=>$product->getId()))
         );
     }
 

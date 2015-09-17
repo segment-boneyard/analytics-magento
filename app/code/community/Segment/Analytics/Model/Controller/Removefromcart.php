@@ -3,9 +3,11 @@ class Segment_Analytics_Model_Controller_Removefromcart extends Segment_Analytic
 {
     public function getBlock($block)
     {
-        $product = $block->getProduct();
+        $params = $block->getParams();
+        $product   = Mage::getModel('catalog/product_api')
+        ->info($params['product_id']);
 
-        $product   = Mage::helper('segment_analytics')
+        $product = Mage::helper('segment_analytics')
         ->getNormalizedProductInformation($product);
 
         $block->setProduct($product);

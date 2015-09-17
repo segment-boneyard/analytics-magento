@@ -8,16 +8,16 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
         ->setVarName($var_name)
         ->toHtml();
     }
-    
+
     public function renderDataAsJsonObject($key=false)
     {
         $data = $key ? $this->getData($key) : $this->getData();
         return $this->getLayout()->createBlock('segment_analytics/json')
         ->setData($data)
         ->setAsRawObject(true)
-        ->toHtml();    
+        ->toHtml();
     }
-    
+
     public function getContextJson()
     {
         $renderer = $this->getLayout()->createBlock('segment_analytics/json')
@@ -25,19 +25,23 @@ class Segment_Analytics_Block_Template extends Mage_Core_Block_Template
             'library'=> array(
                 'name'=>'analytics-magento',
                 'version'=>(string) Mage::getConfig()->getNode()->modules->Segment_Analytics->version
-        )));       
+        )));
         return $renderer->toJsonString();
     }
 
     /**
     * Ensure safe JSON string, even for Magento systems still
     * running on PHP 5.2
-    */    
+    */
     public function getPropertyAsJavascriptString($prop)
     {
-        $data = (string) $this->getData($prop);        
-        $data = json_encode($data);      
-        $data = preg_replace('%[^ $:"\'a-z>0-9_-]%six','',$data);        
+        $data = (string) $this->getData($prop);
+        if ($prop == 'user_id' && empty($data)) {
+            $customer = Mage::getSingleton('customer/session')->getCustomer();
+            $data = (string) $customer->getId();
+        }
+        $data = json_encode($data);
+        $data = preg_replace('%[^ $:"\'a-z>0-9_-]%six','',$data);
         return $data;
     }
 }
