@@ -11,12 +11,12 @@
 
 ## Installing
 
-To get up and running, check out our documentation at [https://segment.com/plugins/magento](https://segment.com/plugins/magento). Installation takes less than five minutes!
+To get up and running, check out our documentation at [https://segment.com/docs/plugins/magento](https://segment.com/docs/plugins/magento). Installation takes less than five minutes!
 
 
 ## Support
 
-If you run into issues, be sure to check out the [documentation](https://segment.com/plugins/magento), and you can always reach out to our [support team](https://segment.com/support) for help!
+If you run into issues, be sure to check out the [documentation](https://segment.com/docs/plugins/magento), and you can always reach out to our [support team](https://segment.com/support) for help!
 
 
 ## Developing
