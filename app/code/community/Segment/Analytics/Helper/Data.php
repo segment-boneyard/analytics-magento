@@ -97,7 +97,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         //if passed id, load the product
         if(!is_array($product))
         {
-            $product = Mage::getModel('catalog/product_api')->info($product);
+            $product = Mage::getModel('catalog/product_api')->info($product, Mage::app()->getStore());
         }
 
         //calculate revenue, if present
