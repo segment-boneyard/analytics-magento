@@ -1,6 +1,8 @@
 
 # Analytics for Magento
 
+> **NOTE**: Official support from Segment for this plugin is **deprecated**. We are currently looking for community maintainers. The current version of this plugin should be free of bugs but any existing and future development will be paused for the time being. We recommend exploring and using third party alternatives. If you have any questions or have interest in stewarding the Segment Magento plugin, please send us an email at friends@segment.com!
+
 **Analytics for Magento** is a Magento extension for [Segment](https://segment.com) that lets you send data to any analytics tool you want without writing any code yourself!
 
 - [Installing](#installing)
