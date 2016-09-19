@@ -13,11 +13,17 @@ class Segment_Analytics_Model_Front_Controller
     {
         if(!self::$_instance)
         {
-            self::$_instance = new Segment_Analytics_Model_Front_Controller;
+            self::$_instance = Mage::getSingleton('segment_analytics/front_controller');
         }
         return self::$_instance;
     }
-        
+    
+    protected function _controllerFactory($actionName)
+    {
+        $model = 'segment_analytics/controller_' . $actionName;
+        return Mage::getModel($model);
+    }
+    
     public function addDeferredAction($action, $action_data=array())
     {
         #Mage::Log("Adding Deferred Action $action");
@@ -69,8 +75,7 @@ class Segment_Analytics_Model_Front_Controller
         $blocks[] = array();
         foreach($this->_actions as $action)
         {
-            $class = 'Segment_Analytics_Model_Controller_' . ucwords($action);
-            $controller = new $class;
+            $controller = $this->_controllerFactory($action);
             $controller->setName($action)
             ->setData($this->_actionsData[$action]);
             $blocks[$action][] = $controller->dispatch();
@@ -78,8 +83,7 @@ class Segment_Analytics_Model_Front_Controller
         
         foreach($this->getDeferredActions() as $action)
         {
-            $class = 'Segment_Analytics_Model_Controller_' . ucwords($action->action);
-            $controller = new $class;
+            $controller = $this->_controllerFactory($action->action);
             $controller->setName($action->action)
             ->setData($action->data);
             $blocks[$action->action][] = $controller->dispatch();        
