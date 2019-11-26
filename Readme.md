@@ -13,7 +13,7 @@
 
 ## Installing
 
-To get up and running, check out our documentation at [https://segment.com/docs/plugins/magento](https://segment.com/docs/plugins/magento). Installation takes less than five minutes!
+To get up and running, check out our documentation at [DEPRECATED] [https://segment.com/docs/plugins/magento](https://segment.com/docs/plugins/magento). Installation takes less than five minutes!
 
 
 ## Support
