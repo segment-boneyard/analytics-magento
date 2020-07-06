@@ -49,8 +49,8 @@
                             <show_in_store>1</show_in_store>
 						</customer_traits>
                         <product_properties>
-                            <label>Product Properties Blacklist</label>
-                            <comment>Which Magento Product Data Fields would you like to blacklist from properties of your calls?</comment>
+                            <label>Product Properties Denylist</label>
+                            <comment>Which Magento Product Data Fields would you like to deny from properties of your calls?</comment>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
