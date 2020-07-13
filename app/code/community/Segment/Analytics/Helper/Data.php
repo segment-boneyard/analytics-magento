@@ -131,10 +131,10 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
             unset($product['product_id']);
         }
 
-        $blacklist = trim(Mage::getStoreConfig('segment_analytics/options/product_properties'));
-        $blacklistedFields = preg_split('%[\n\r]%', $blacklist, -1, PREG_SPLIT_NO_EMPTY);
+        $denylist = trim(Mage::getStoreConfig('segment_analytics/options/product_properties'));
+        $deniedFields = preg_split('%[\n\r]%', $denylist, -1, PREG_SPLIT_NO_EMPTY);
 
-        foreach($blacklistedFields as $key)
+        foreach($deniedFields as $key)
         {
             if(!array_key_exists($key, $product)) { continue; }
             unset($product[$key]);
