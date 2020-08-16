@@ -141,7 +141,7 @@ class Segment_Analytics_Helper_Data extends Mage_Core_Helper_Abstract
         }
 
         $product = $this->getDataCastAsBooleans($product);
-        $product = array_filter($product, function($v, $k) {
+        $product = array_filter($product, function($v) {
             return !is_null($v);
         });
         return $this->_normalizeDatesToISO8601($product);
